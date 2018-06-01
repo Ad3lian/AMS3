@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}adrien-martin.fr{% endblock %}</title>
+    {% block stylesheets %}
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ asset('public/css/bootstrap.css')}}">
+        <link rel="stylesheet" href="../public/css/styleAbout.css">
+        <link rel="stylesheet" href="../public/css/stylePosts.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+    {% endblock %}
+</head>
+
+{% block body %}
+
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('public/js/jquery.js')}}"></script>
+    <script type="text/javascript" src="../public/js/bo.js"></script>
+    <script type="text/javascript" src="{{ asset('public/js/bootstrap.js')}}"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+{% endblock %}
+
+
+</html>

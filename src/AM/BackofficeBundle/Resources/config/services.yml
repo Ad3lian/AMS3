@@ -1,0 +1,4 @@
+services:
+#    am_backoffice.example:
+#        class: AM\BackofficeBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

@@ -1,0 +1,27 @@
+am_backoffice_index:
+    path:     /bo/
+    defaults: { _controller: AMBackofficeBundle:Backoffice:index }
+
+am_backoffice_infos:
+    path:    /bo/mesinfos
+    defaults: { _controller: AMBackofficeBundle:Backoffice:infos }
+
+am_backoffice_addpost:
+   path:    /bo/addpost
+   defaults: { _controller: AMBackofficeBundle:Backoffice:addpost }
+
+am_backoffice_aboutme:
+   path:    /bo/monabout
+   defaults: { _controller: AMBackofficeBundle:Backoffice:about }
+
+am_backoffice_myposts:
+   path:    /bo/mesposts
+   defaults: { _controller: AMBackofficeBundle:Backoffice:posts }
+
+am_backoffice_register:
+   path:    /bo/inscription
+   defaults: { _controller: AMBackofficeBundle:Backoffice:register }
+
+am_backoffice_mymails:
+   path:    /bo/messagerie
+   defaults: { _controller: AMBackofficeBundle:Backoffice:mail }

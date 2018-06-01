@@ -1,0 +1,37 @@
+{% extends "AMBackofficeBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - Backoffice{% endblock %}
+
+
+{#   MENU    #}
+{% block body %}
+
+        {{ include("AMBackofficeBundle:Backoffice:menu2.html.twig") }}
+
+{#  CONTENT  #}
+    <div class="container-fluid">
+        <div class="row" style="margin-top: 80px;">
+            <div class="col-12 col-md-3 col-lg-2 col-xl-3 bd-sidebar">
+                {{ include("AMBackofficeBundle:Backoffice:navBar.html.twig") }}
+            </div>
+            <div class="col-12 col-md-7 col-lg-8 col-xl-8 bd-content" role="main">
+                <div class="container-fluid">
+                    <div class="row" style="margin-top: 80px;">
+                        <div class="col-2 col-md-2 col-lg-2 col-xl-2 bd-sidebar">
+                        </div>
+                        <div class="col-8 col-md-8 col-lg-8 col-xl-8 bd-content" role="main">
+
+                            <h1 class="display-1">Bienvenue dans l'espace Administration</h1>
+
+                        </div>
+                        <div class="col-2 col-md-2 col-lg-2 col-xl-2 bd-content" role="main">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-2 col-lg-2 col-xl-1 bd-content" role="main">
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

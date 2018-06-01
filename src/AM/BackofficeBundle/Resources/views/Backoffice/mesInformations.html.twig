@@ -1,0 +1,92 @@
+{% extends "AMBackofficeBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - Mes informations{% endblock %}
+
+
+{#   MENU    #}
+{% block body %}
+
+        {{ include("AMBackofficeBundle:Backoffice:menu2.html.twig") }}
+
+{#  CONTENT  #}
+<div class="container-fluid">
+    <div class="row" style="margin-top: 80px;">
+        <div class="col-12 col-md-3 col-lg-2 col-xl-3 bd-sidebar">
+            {{ include("AMBackofficeBundle:Backoffice:navBar.html.twig") }}
+        </div>
+        <div class="col-12 col-md-7 col-lg-8 col-xl-8 bd-content" role="main">
+            <div class="container-fluid">
+                <div class="row" style="margin-top: 80px;">
+                    <div class="col-2 col-md-2 col-lg-2 col-xl-2 bd-sidebar">
+                    </div>
+                    <div class="col-8 col-md-8 col-lg-8 col-xl-8 bd-content" role="main">
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <strong>Mes informations :</strong>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-9 col-md-9 col-lg-9 col-xl-9">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                Nom : <?= $mesInfos['name'] ?><br>
+                                                Prénom : <?= $mesInfos['firstname'] ?><br>
+                                                Email : <?= $mesInfos['email'] ?><br>
+                                                Inscrit depuis le : <?= $mesInfos['register_date_fr'] ?><br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 col-md-3 col-lg-3 col-xl-3">
+                                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#modifier_mesinfosDiv" aria-expanded="false" >Modifier</button>
+                                    </div>
+                                </div>
+                                <div class="collapse" class="collapse" id="modifier_mesinfosDiv" aria-expanded="true" style="">
+                                    <div class="row">
+                                        <div class="col-9 col-md-9 col-lg-9 col-xl-9">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                </div>
+                                                <div class="panel-body">
+                                                    <form action="index.php?action=modifier_mesInfos" method="POST">
+                                                        <div class="form-group ">
+                                                            <label for="nom">Nom * : </label>
+                                                            <input type="text" id="nom" name="nom" required maxlength="35" placeholder="Nom" value="<?= $mesInfos['name'] ?>" class="form-control">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="prenom">Prénom * : </label>
+                                                            <input type="text" id="prenom" name="prenom" required maxlength="35" placeholder="Prénom" value="<?= $mesInfos['firstname'] ?>" class="form-control">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="email">Email * : </label>
+                                                            <input type="text" id="email" name="email" required placeholder="Email" maxlength="255" value="<?= $mesInfos['email'] ?>" class="form-control">
+                                                        </div>
+                                                    </form>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-3 col-md-3 col-lg-3 col-xl-3">
+                                            <form action="index.php?action=modifier_mesInfos" method="POST">
+                                                <button id="modifier_mesInfos" class="btn btn-danger" type="button" value="<?= $mesInfos['id'] ?>">Confirmer</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+                    <div class="col-2 col-md-2 col-lg-2 col-xl-2 bd-content" role="main">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-2 col-lg-2 col-xl-1 bd-content" role="main">
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
