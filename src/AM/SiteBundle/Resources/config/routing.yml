@@ -1,0 +1,27 @@
+am_site_index:
+    path:     /
+    defaults: { _controller: AMSiteBundle:Site:index }
+
+am_site_about:
+    path:    /about
+    defaults: { _controller: AMSiteBundle:Site:index }
+
+am_site_posts:
+    path:    /blog
+    defaults: { _controller: AMSiteBundle:Site:listPostsView }
+
+am_site_post:
+    path:    /blog/billet/{id}
+    defaults: { _controller: AMSiteBundle:Site:postView }
+
+am_site_cv:
+    path:    /cv
+    defaults: { _controller: AMSiteBundle:Site:cv }
+
+am_site_contact:
+    path:    /contact
+    defaults: { _controller: AMSiteBundle:Site:contact }
+
+am_site_inscription:
+    path:    /inscription
+    defaults: { _controller: AMSiteBundle:Site:inscription }

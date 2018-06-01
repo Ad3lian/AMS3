@@ -1,0 +1,42 @@
+{% extends "AMSiteBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - Blog{% endblock %}
+
+
+{#   MENU    #}
+{% block body %}
+{{ include("AMSiteBundle:Site:menu.html.twig") }}
+
+{#  CONTENT  #}
+<div class="row">
+    <div class="col-12 col-md-2 col-lg-2 col-xl-3 bd-sidebar"></div>
+    <div class="col-12 col-md-8 col-lg-8 col-xl-6 bd-content" role="main">
+
+        {%  for post in posts %}
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        {{ post.title }}
+                    </div>
+                    <div class="panel-body">
+                        <div>
+                            {{ post.content|striptags|raw }}
+                        </div>
+                        <div>
+                            Crée le {{ post.creationDate|date('Y-m-d H:i:s') }} <br/>
+                            par {{ post.author }} <br><br/>
+                            <span class="blue">
+                                <a href="{{ path('am_site_post', { 'id': post.id }) }}">
+                                   Commentaires
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+    <div class="col-12 col-md-2 col-lg-2 col-xl-3 bd-toc"></div>
+</div>
+{% endblock %}

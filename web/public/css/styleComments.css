@@ -1,0 +1,53 @@
+/* COMMENTAIRES */
+
+/* Versions mobiles */
+@media (max-width: 480px)
+{
+    *{ box-sizing: border-box; }
+    
+    body {
+        width:auto;
+        margin:0;
+        padding:0;
+    }
+    
+    .header_nav{
+	display:block;
+	width:100%;
+	margin:auto;
+    }
+    
+    #logo{
+	display:block;
+	width:auto;
+	font-size: 2.5em;
+    }
+    
+    nav{
+        display:block;
+        margin:auto;
+	width:auto;
+        text-align:center;
+    }
+	
+    ul{ Display:block; background-color: #F2F1EF; }
+	
+    li{
+        display:block;
+	width:auto;
+	font-size:1.5em;
+	list-style-type:none;
+	height:40px;
+    }
+    
+    
+    .blue{ color:#446CB3; font-style: italic; }
+    a:hover{ color:#446CB3; }
+    a{ text-decoration:none; color:#22313F; }
+    h2, h3{ font-size:0.8em; }
+    
+    #author, #comment{
+    width:100%;
+    height: 30px;
+}
+}

@@ -1,0 +1,35 @@
+{% extends "AMSiteBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - About Me{% endblock %}
+
+
+{#   MENU    #}
+{% block body %}
+{{ include("AMSiteBundle:Site:menu.html.twig") }}
+
+
+{#  CONTENT  #}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-2 col-lg-2 col-xl-3 bd-sidebar"></div>
+        <div class="col-12 col-md-8 col-lg-8 col-xl-6 bd-content" role="main">
+            {%  for aboutme in aboutMe %}
+
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                       {{ aboutme.title }}
+                    </div>
+                    <div class="panel-body">
+                        {{ aboutme.content }}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+        <div class="col-12 col-md-2 col-lg-2 col-xl-3 bd-toc"></div>
+    </div>
+</div>
+
+{% endblock %}

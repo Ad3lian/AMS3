@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}adrien-martin.fr{% endblock %}</title>
+        {% block stylesheets %}
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="{{ asset('public/css/bootstrap.css')}}">
+            <link rel="stylesheet" href="../public/css/styleAbout.css">
+            <link rel="stylesheet" href="../public/css/stylePosts.css">
+            <link rel="stylesheet" href="../public/css/styleContact.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        {% endblock %}
+    </head>
+
+
+        {#   PANORAMA   #}
+        {% block panorama %}
+            {% if noPano is defined and noPano %}
+            <div id ="panorama">
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img class="d-block w-100" data-src="First slide" src='{{ asset('public/images/meeting.jpg')}}' alt="First slide" data-holder-rendered="true">
+                        </div>
+                        <div class="item">
+                            <img class="d-block w-100" data-src="Second slide" src='{{ asset('public/images/laptop.jpg')}}' alt="Second slide" data-holder-rendered="true">
+                        </div>
+                        <div class="item">
+                            <img class="d-block w-100" data-src="Third slide" src='{{ asset('public/images/coffee.jpg')}}' alt="Third slide" data-holder-rendered="true">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+                <div style="height: 70px;"></div>
+            {% endif %}
+        {% endblock %}
+
+
+    {% block body %}
+    {% endblock %}
+
+
+    {% block javascripts %}
+        <script type="text/javascript" src="{{ asset('public/js/jquery.js')}}"></script>
+        <script type="text/javascript" src="../public/js/contact.js"></script>
+        <script type="text/javascript" src="{{ asset('public/js/bootstrap.js')}}"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    {% endblock %}
+
+
+</html>

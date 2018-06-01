@@ -1,0 +1,3 @@
+am_site:
+    resource: "@AMSiteBundle/Resources/config/routing.yml"
+    prefix:   /
