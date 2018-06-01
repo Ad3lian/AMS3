@@ -6,7 +6,7 @@
 {#   MENU    #}
 {% block body %}
 
-        {{ include("AMBackofficeBundle:Backoffice:menu2.html.twig") }}
+    {{ include("AMBackofficeBundle:Backoffice:menu2.html.twig") }}
 
 {#  CONTENT  #}
 <div class="container-fluid">
@@ -30,15 +30,19 @@
                                     <div class="col-9 col-md-9 col-lg-9 col-xl-9">
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
-                                                Nom : <?= $mesInfos['name'] ?><br>
-                                                Prénom : <?= $mesInfos['firstname'] ?><br>
-                                                Email : <?= $mesInfos['email'] ?><br>
-                                                Inscrit depuis le : <?= $mesInfos['register_date_fr'] ?><br>
+                                                {%  for user in users %}
+                                                    Nom : {{ user.name }}<br>
+                                                    Prénom : {{ user.firstname }}<br>
+                                                    Email : {{ user.email }}<br>
+                                                    Inscrit depuis le : {{ user.registerDate|date('Y-m-d H:i:s') }}<br>
+                                                {% endfor %}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-3 col-md-3 col-lg-3 col-xl-3">
-                                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#modifier_mesinfosDiv" aria-expanded="false" >Modifier</button>
+                                        <button class="btn btn-primary" type="button" data-toggle="collapse"
+                                                data-target="#modifier_mesinfosDiv" aria-expanded="false" >Modifier
+                                        </button>
                                     </div>
                                 </div>
                                 <div class="collapse" class="collapse" id="modifier_mesinfosDiv" aria-expanded="true" style="">
@@ -48,28 +52,37 @@
                                                 <div class="panel-heading">
                                                 </div>
                                                 <div class="panel-body">
-                                                    <form action="index.php?action=modifier_mesInfos" method="POST">
+                                                    {%  for user in users %}
+                                                    <form action="{{ path('am_backoffice_changeusers', { 'id': user.id }) }}" method="POST">
                                                         <div class="form-group ">
                                                             <label for="nom">Nom * : </label>
-                                                            <input type="text" id="nom" name="nom" required maxlength="35" placeholder="Nom" value="<?= $mesInfos['name'] ?>" class="form-control">
+                                                            <input type="text" id="nom" name="nom" required maxlength="35"
+                                                                   placeholder="Nom" value="{{ user.name }}" class="form-control">
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="prenom">Prénom * : </label>
-                                                            <input type="text" id="prenom" name="prenom" required maxlength="35" placeholder="Prénom" value="<?= $mesInfos['firstname'] ?>" class="form-control">
+                                                            <input type="text" id="prenom" name="prenom" required maxlength="35"
+                                                                   placeholder="Prénom" value="{{ user.firstname }}" class="form-control">
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="email">Email * : </label>
-                                                            <input type="text" id="email" name="email" required placeholder="Email" maxlength="255" value="<?= $mesInfos['email'] ?>" class="form-control">
+                                                            <input type="text" id="email" name="email" required placeholder="Email"
+                                                                   maxlength="255" value="{{ user.email }}" class="form-control">
                                                         </div>
                                                     </form>
+                                                    {% endfor %}
                                                 </div>
 
                                             </div>
                                         </div>
                                         <div class="col-3 col-md-3 col-lg-3 col-xl-3">
-                                            <form action="index.php?action=modifier_mesInfos" method="POST">
-                                                <button id="modifier_mesInfos" class="btn btn-danger" type="button" value="<?= $mesInfos['id'] ?>">Confirmer</button>
+                                            {%  for user in users %}
+                                            <form action="{{ path('am_backoffice_changeusers', { 'id': user.id }) }}" method="POST">
+                                                <button id="modifier_mesInfos" class="btn btn-danger" type="button"
+                                                        value="{{ user.id }}">Confirmer
+                                                </button>
                                             </form>
+                                            {% endfor %}
                                         </div>
                                     </div>
                                 </div>

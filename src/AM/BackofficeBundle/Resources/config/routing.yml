@@ -2,26 +2,42 @@ am_backoffice_index:
     path:     /bo/
     defaults: { _controller: AMBackofficeBundle:Backoffice:index }
 
-am_backoffice_infos:
-    path:    /bo/mesinfos
-    defaults: { _controller: AMBackofficeBundle:Backoffice:infos }
+am_backoffice_users:
+    path:    /bo/users/{id}
+    defaults: { _controller: AMBackofficeBundle:Backoffice:users }
+
+am_backoffice_changeusers:
+    path: /bo/changeusers/{id}
+    defaults: { _controller: AMBackofficeBundle:Backoffice:changeusers }
 
 am_backoffice_addpost:
    path:    /bo/addpost
    defaults: { _controller: AMBackofficeBundle:Backoffice:addpost }
 
 am_backoffice_aboutme:
-   path:    /bo/monabout
-   defaults: { _controller: AMBackofficeBundle:Backoffice:about }
+   path:    /bo/myabout
+   defaults: { _controller: AMBackofficeBundle:Backoffice:aboutme }
 
 am_backoffice_myposts:
-   path:    /bo/mesposts
-   defaults: { _controller: AMBackofficeBundle:Backoffice:posts }
+   path:    /bo/myposts
+   defaults: { _controller: AMBackofficeBundle:Backoffice:myposts }
 
-am_backoffice_register:
+am_backoffice_changemypost:
+    path:   /bo/changemypost/{id}
+    defaults: { _controller: AMBackofficeBundle:Backoffice:changemypost }
+
+am_backoffice_usertemp:
    path:    /bo/inscription
-   defaults: { _controller: AMBackofficeBundle:Backoffice:register }
+   defaults: { _controller: AMBackofficeBundle:Backoffice:usertemp }
+
+am_backoffice_removeusertemp:
+    path:    /bo/removeusertemp/{id}
+    defaults: { _controller: AMBackofficeBundle:Backoffice:removeusertemp }
 
 am_backoffice_mymails:
    path:    /bo/messagerie
    defaults: { _controller: AMBackofficeBundle:Backoffice:mail }
+
+am_backoffice_removemail:
+   path:    /bo/removemail/{id}
+   defaults: { _controller: AMBackofficeBundle:Backoffice:removemail }
