@@ -20,7 +20,7 @@
                         Inscription :
                     </div>
                     <div class="panel-body">
-                        <form id="form_inscription" action="index.php?action=save_inscription" method="POST">
+                        <form id="form_inscription" action="{{ path('am_site_inscription') }}" method="POST">
                             <div class="form-group ">
                                 <label for="nom">Nom * : </label>
                                 <input type="text" id="ins_nom" name="nom" required maxlength="35" placeholder="Nom" class="form-control">
@@ -61,6 +61,9 @@
                         </form>
                     </div>
                 </div>
+            </div>
+            <div class="well">
+                {{ form(form) }}
             </div>
         </div>
         <div class="col-12 col-md-2 col-lg-2 col-xl-3 bd-toc"></div>

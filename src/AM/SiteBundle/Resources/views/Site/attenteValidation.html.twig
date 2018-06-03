@@ -1,20 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/bootstrap/css/bootstrap.css" />
-    <link rel="stylesheet" href="public/css/stylePosts.css" />
-    <link rel="stylesheet" href="public/css/styleContact.css" />
-    <title>Inscription en attente</title>
-</head>
-<body>
-<?php include 'menu.php'; ?>
+{% extends "AMSiteBundle::layout.html.twig" %}
 
+{% block title %}{{ parent() }} - Validation en cours {% endblock %}
+
+
+{#   MENU    #}
+{% block body %}
+
+    {{ include("AMSiteBundle:Site:menu.html.twig") }}
+
+{#  CONTENT  #}
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 col-md-2 col-lg-2 col-xl-3 bd-sidebar"></div>
         <div class="col-12 col-md-8 col-lg-8 col-xl-6 bd-content" role="main">
+
             <div class="row">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -29,10 +28,8 @@
                 </div>
             </div>
         </div>
+        <div class="col-12 col-md-2 col-lg-2 col-xl-3 bd-toc"></div>
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="public/bootstrap/js/bootstrap.js"></script>
-<script src="public/js/contact.js"></script>
-</body>
-</html>
+
+{% endblock %}
