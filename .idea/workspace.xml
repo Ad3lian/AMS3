@@ -8,6 +8,7 @@
       <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/AppKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AppKernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/routing.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AM/SiteBundle/Tests/Controller/DefaultControllerTest.php" beforeDir="false" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,17 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -117,17 +108,6 @@
             <path>
               <item name="S3" type="b2602c69:ProjectViewProjectNode" />
               <item name="S3" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="S3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="S3" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="S3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="S3" type="462c0819:PsiDirectoryNode" />
               <item name="bin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -140,6 +120,29 @@
               <item name="S3" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="AM" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="S3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="S3" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="AM" type="462c0819:PsiDirectoryNode" />
+              <item name="SiteBundle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="S3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="S3" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="AM" type="462c0819:PsiDirectoryNode" />
+              <item name="SiteBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="S3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="S3" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="AM" type="462c0819:PsiDirectoryNode" />
+              <item name="SiteBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Tests" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -176,7 +179,7 @@
       <workItem from="1527583272963" duration="42000" />
       <workItem from="1527666863833" duration="5809000" />
       <workItem from="1527843346357" duration="18966000" />
-      <workItem from="1528026416931" duration="7363000" />
+      <workItem from="1528026416931" duration="7673000" />
     </task>
     <task id="LOCAL-00001" summary="premier enregistrement du site">
       <created>1527844100663</created>
@@ -203,7 +206,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3018000" />
+    <option name="totallyTimeSpent" value="3328000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -216,7 +219,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="1176" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32851636" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
