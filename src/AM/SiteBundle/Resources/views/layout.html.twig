@@ -14,7 +14,7 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         {% endblock %}
     </head>
-
+    <body>
 
         {#   PANORAMA   #}
         {% block panorama %}
@@ -39,17 +39,16 @@
             {% endif %}
         {% endblock %}
 
+        {% block body %}
 
-    {% block body %}
-    {% endblock %}
+        {% endblock %}
 
+        {% block javascripts %}
+            <script type="text/javascript" src="{{ asset('public/js/jquery.js')}}"></script>
+            <script type="text/javascript" src="../public/js/contact.js"></script>
+            <script type="text/javascript" src="{{ asset('public/js/bootstrap.js')}}"></script>
+            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        {% endblock %}
 
-    {% block javascripts %}
-        <script type="text/javascript" src="{{ asset('public/js/jquery.js')}}"></script>
-        <script type="text/javascript" src="../public/js/contact.js"></script>
-        <script type="text/javascript" src="{{ asset('public/js/bootstrap.js')}}"></script>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    {% endblock %}
-
-
+    </body>
 </html>
