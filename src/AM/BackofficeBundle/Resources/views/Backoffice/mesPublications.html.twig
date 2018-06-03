@@ -1,0 +1,118 @@
+{% extends "AMBackofficeBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - Messagerie {% endblock %}
+
+
+{#   MENU    #}
+{% block body %}
+
+    {{ include("AMBackofficeBundle:Backoffice:menu2.html.twig") }}
+
+{#  CONTENT  #}
+<div class="container-fluid">
+    <div class="row" style="margin-top: 80px;">
+        <div class="col-12 col-md-3 col-lg-2 col-xl-3 bd-sidebar">
+            {{ include("AMBackofficeBundle:Backoffice:navBar.html.twig") }}
+        </div>
+        <div class="col-12 col-md-7 col-lg-8 col-xl-8 bd-content" role="main">
+            <div class="container-fluid">
+                <div class="row" style="margin-top: 80px;">
+                    <div class="col-2 col-md-2 col-lg-2 col-xl-2 bd-sidebar">
+                    </div>
+                    <div class="col-8 col-md-8 col-lg-8 col-xl-8 bd-content" role="main">
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <strong>Mes publications :</strong>
+                            </div>
+                            <div class="panel-body">
+
+                                {% for mypost in myposts %}
+                                    <div class="row">
+                                        <div class="col-9 col-md-9 col-lg-9 col-xl-9">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                {{ mypost.title }}
+                                                </div>
+                                                <div class="panel-body">
+                                                    <div>
+                                                        {{ mypost.content }}
+                                                    </div><br>
+                                                    <div>
+                                                        Crée le {{ mypost.creationDate|date('Y-m-d H:i:s') }}<br/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 col-md-3 col-lg-3 col-xl-3">
+                                            <button class="btn btn-danger" type="button" data-toggle="collapse"
+                                                    data-target="#demo{{ mypost.id }}" aria-expanded="false">Supprimer
+                                            </button><br><br>
+                                            <button class="btn btn-primary" type="button" data-toggle="collapse"
+                                                    data-target="#modifier_monPost{{ mypost.id }}" aria-expanded="false">Modifier
+                                            </button><br><br>
+                                            <div id="demo{{ mypost.id }}" class="collapse"
+                                            aria-expanded="true" style="">
+                                                <form action="index.php?action=delete_post" method="POST">
+                                                Confirmer suppression ?
+                                                    <input type="hidden" name="id" value="{{ mypost.id }}">
+                                                <button id="delete_post" class="btn btn-danger" type="submit"
+                                                        value="{{ mypost.id }}">Supprimer
+                                                </button>
+                                                <button class="btn btn-primary" type="button" >Annuler</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="collapse" class="collapse" id="modifier_monPost{{ mypost.id }}"
+                                         aria-expanded="true" style="">
+                                        <div class="row">
+                                            <div class="col-9 col-md-9 col-lg-9 col-xl-9">
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <form action="{{ path('am_backoffice_changemypost', { 'id': mypost.id }) }}" method="POST">
+                                                            <div class="form-group ">
+                                                                <label for="nom">Titre * : </label>
+                                                                <input type="text" id="titre" name="titre" required
+                                                                       maxlength="35" placeholder="Titre"
+                                                                       value="{{ mypost.title }}"
+                                                                       class="form-control">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="message">Message * : </label>
+                                                                <textarea id="message" name="message" required placeholder="Message"
+                                                                          class="form-control" rows="15">{{ mypost.content }}
+                                                                </textarea>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>                                             
+                                            </div>
+                                            <div class="col-3 col-md-3 col-lg-3 col-xl-3"> 
+                                                <form action="{{ path('am_backoffice_changemypost', { 'id': mypost.id }) }}" method="POST">
+                                                    <button id="modifier_momPost" class="btn btn-danger" type="button"
+                                                            value="{{ mypost.id }}">Confirmer
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>        
+                                    </div>
+                                {% endfor %}
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-2 col-md-2 col-lg-2 col-xl-2 bd-content" role="main">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-2 col-lg-2 col-xl-1 bd-content" role="main">
+    </div>
+</div>
+
+{% endblock %}

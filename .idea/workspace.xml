@@ -4,36 +4,148 @@
     <bookmark url="file://$PROJECT_DIR$/src/AM/SiteBundle/Resources/views/Site/listPostsView.html.twig" line="24" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="69b46fb2-3feb-4a41-a192-198afe50ca7d" name="Default" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/AppKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AppKernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/routing.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AM/SiteBundle/Tests/Controller/DefaultControllerTest.php" beforeDir="false" />
     </list>
+=======
+    <list default="true" id="bd69afba-5aed-40dc-aad8-4ead4f9a7d99" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+>>>>>>> backoffice
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+=======
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+>>>>>>> backoffice
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/AM/UserBundle/Controller/SecurityController.php" />
         <option value="$PROJECT_DIR$/src/AM/UserBundle/Resources/views/Security/login.html.twig" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
+=======
+        <option value="$PROJECT_DIR$/src/OC/PlatformBundle/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/src/OC/PlatformBundle/Tests/composer.json" />
+        <option value="$PROJECT_DIR$/src/OC/PlatformBundle/Resources/config/services.yml" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/src/OC/PlatformBundle/Resources/views/Default/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/OC/PlatformBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/OC/PlatformBundle/Resources/views/Advert/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/OC/PlatformBundle/Controller/AdvertController.php" />
+        <option value="$PROJECT_DIR$/src/AM/SiteBundle/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/app/AppKernel.php" />
+        <option value="$PROJECT_DIR$/app/config/services.yml" />
+        <option value="$PROJECT_DIR$/src/AM/SiteBundle/Resources/public/css/styleAbout.css" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/src/AM/SiteBundle/Resources/public/js/bootstrap.js" />
+        <option value="$PROJECT_DIR$/src/AM/SiteBundle/Resources/views/Site/attenteValidation.html.twig" />
+        <option value="$PROJECT_DIR$/src/AM/SiteBundle/Resources/views/Site/contact.html.twig" />
+        <option value="$PROJECT_DIR$/src/AM/SiteBundle/Entity/About.php" />
+        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
+        <option value="$PROJECT_DIR$/src/AM/SiteBundle/Repository/AboutMeRepository.php" />
+        <option value="$PROJECT_DIR$/src/AM/SiteBundle/Entity/AboutMe.php" />
+        <option value="$PROJECT_DIR$/src/AM/SiteBundle/Resources/views/Site/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/AM/SiteBundle/Repository/PostsRepository.php" />
+        <option value="$PROJECT_DIR$/src/AM/SiteBundle/Resources/views/Site/cv.html.twig" />
+        <option value="$PROJECT_DIR$/src/AM/SiteBundle/Resources/public/css/styleCV.css" />
+        <option value="$PROJECT_DIR$/src/AM/SiteBundle/Resources/views/Site/postView.html.twig" />
+        <option value="$PROJECT_DIR$/src/AM/SiteBundle/Entity/Comments.php" />
+        <option value="$PROJECT_DIR$/src/AM/SiteBundle/Entity/Posts.php" />
+        <option value="$PROJECT_DIR$/src/AM/SiteBundle/Resources/views/Site/listPostsView.html.twig" />
+        <option value="$PROJECT_DIR$/src/AM/BackofficeBundle/Resources/views/Backoffice/backoffice.php" />
+        <option value="$PROJECT_DIR$/src/AM/BackofficeBundle/Resources/views/Backoffice/menu2.html.twig" />
+        <option value="$PROJECT_DIR$/src/AM/BackofficeBundle/Resources/views/Backoffice/backoffice.html.twig" />
+        <option value="$PROJECT_DIR$/src/AM/BackofficeBundle/Entity/Users.php" />
+        <option value="$PROJECT_DIR$/src/AM/BackofficeBundle/Resources/views/Backoffice/mesInformations.html.twig" />
+        <option value="$PROJECT_DIR$/src/AM/BackofficeBundle/Resources/views/layout.html.twig" />
+        <option value="$PROJECT_DIR$/src/AM/BackofficeBundle/Resources/views/Backoffice/ajoutArticle.html.twig" />
+        <option value="$PROJECT_DIR$/src/AM/BackofficeBundle/Entity/Email.php" />
+        <option value="$PROJECT_DIR$/src/AM/BackofficeBundle/Resources/views/Backoffice/messagerie.html.twig" />
+        <option value="$PROJECT_DIR$/src/AM/BackofficeBundle/Entity/Usertemp.php" />
+        <option value="$PROJECT_DIR$/src/AM/BackofficeBundle/Resources/views/Backoffice/usersTemp.html.twig" />
+        <option value="$PROJECT_DIR$/src/AM/BackofficeBundle/Resources/views/Backoffice/navBar.html.twig" />
+        <option value="$PROJECT_DIR$/src/AM/BackofficeBundle/Resources/views/Backoffice/mesPublications.html.twig" />
+        <option value="$PROJECT_DIR$/src/AM/BackofficeBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/AM/BackofficeBundle/Resources/views/Backoffice/manager_AboutMe.html.twig" />
+        <option value="$PROJECT_DIR$/src/AM/BackofficeBundle/Controller/BackofficeController.php" />
+        <option value="$PROJECT_DIR$/src/AM/SiteBundle/Resources/views/Site/inscription.html.twig" />
+        <option value="$PROJECT_DIR$/src/AM/SiteBundle/Controller/SiteController.php" />
+        <option value="$PROJECT_DIR$/src/AM/SiteBundle/Resources/views/Site/menu.html.twig" />
+        <option value="$PROJECT_DIR$/src/AM/SiteBundle/Resources/views/layout.html.twig" />
+        <option value="$PROJECT_DIR$/app/config/security.yml" />
+        <option value="$PROJECT_DIR$/src/AM/SiteBundle/Resources/config/routing.yml" />
+>>>>>>> backoffice
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+=======
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+>>>>>>> backoffice
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
@@ -86,7 +198,11 @@
       <path value="$PROJECT_DIR$/vendor/twig/twig" />
     </include_path>
   </component>
+<<<<<<< HEAD
   <component name="ProjectFrameBounds" extendedState="6">
+=======
+  <component name="ProjectFrameBounds">
+>>>>>>> backoffice
     <option name="x" value="-4" />
     <option name="width" value="1607" />
     <option name="height" value="597" />
@@ -150,6 +266,39 @@
       </pane>
     </panes>
   </component>
+<<<<<<< HEAD
+=======
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="Native" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.jscs" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.detected.package.stylelint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.jscs" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.path.for.package.stylelint" value="project" />
+    <property name="node.js.selected.package.eslint" value="" />
+    <property name="node.js.selected.package.jscs" value="" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.stylelint" value="" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="xpath.settings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\S3\src\AM\BackofficeBundle\Resources\views\Backoffice" />
+      <recent name="C:\wamp64\www\S3\src\AM\SiteBundle\Resources\views" />
+      <recent name="C:\wamp64\www\S3\src\AM\SiteBundle\Resources\views\Default\Site" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\S3\web" />
+    </key>
+  </component>
+>>>>>>> backoffice
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -179,7 +328,11 @@
       <workItem from="1527583272963" duration="42000" />
       <workItem from="1527666863833" duration="5809000" />
       <workItem from="1527843346357" duration="18966000" />
+<<<<<<< HEAD
       <workItem from="1528026416931" duration="7673000" />
+=======
+      <workItem from="1528026416931" duration="3746000" />
+>>>>>>> backoffice
     </task>
     <task id="LOCAL-00001" summary="premier enregistrement du site">
       <created>1527844100663</created>
@@ -206,7 +359,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="3328000" />
+=======
+    <option name="totallyTimeSpent" value="73110000" />
+>>>>>>> backoffice
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -234,35 +391,77 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32947975" />
+=======
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32967034" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32851636" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32851636" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32851636" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32969153" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.18689787" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32947975" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+>>>>>>> backoffice
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+<<<<<<< HEAD
+=======
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+>>>>>>> backoffice
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.34719712" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="11" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Version Control" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="7" />
       <window_info anchor="bottom" id="Find" order="6" />
+=======
+      <window_info anchor="bottom" id="Run" order="7" />
+      <window_info anchor="bottom" id="Message" order="5" />
+>>>>>>> backoffice
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="right" id="Database" order="0" />
       <window_info anchor="bottom" id="Terminal" order="2" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info id="Favorites" order="0" side_tool="true" />
     </layout-to-restore>
   </component>
+=======
+      <window_info anchor="bottom" id="Version Control" order="4" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Find" order="6" />
+      <window_info id="Favorites" order="0" side_tool="true" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+>>>>>>> backoffice
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -310,6 +509,12 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+=======
+    <entry file="file://$USER_HOME$/OneDrive/SITE INTERNET/siteAdrien/view/frontend/contact.php" />
+    <entry file="file://$USER_HOME$/OneDrive/SITE INTERNET/siteAdrien/view/frontend/cv.php" />
+    <entry file="file://$USER_HOME$/OneDrive/SITE INTERNET/siteAdrien/view/frontend/inscription.php" />
+>>>>>>> backoffice
     <entry file="file://$USER_HOME$/OneDrive/SITE INTERNET/siteAdrien/view/frontend/listPostsView.php" />
     <entry file="file://$USER_HOME$/OneDrive/SITE INTERNET/siteAdrien/view/frontend/postView.php" />
     <entry file="file://$USER_HOME$/OneDrive/SITE INTERNET/siteAdrien/view/frontend/postsTemplate.php" />
@@ -332,6 +537,16 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> backoffice
     <entry file="file://$USER_HOME$/OneDrive/SITE INTERNET/siteAdrien/model/Manager.php" />
     <entry file="file://$PROJECT_DIR$/src/AM/SiteBundle/Repository/AboutMeRepository.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -528,9 +743,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="769">
           <caret line="95" selection-start-line="95" selection-end-line="95" />
+<<<<<<< HEAD
           <folding>
             <element signature="e#44#77#0#PHP" expanded="true" />
           </folding>
+=======
+>>>>>>> backoffice
         </state>
       </provider>
     </entry>
@@ -576,6 +794,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/AM/UserBundle/Resources/views/Security/login.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -607,15 +826,44 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="31" column="19" lean-forward="true" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+>>>>>>> backoffice
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="51">
           <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+=======
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+>>>>>>> backoffice
         </state>
       </provider>
     </entry>
   </component>
+<<<<<<< HEAD
+=======
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+>>>>>>> backoffice
 </project>

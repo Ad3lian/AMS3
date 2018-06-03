@@ -34,7 +34,7 @@
             </div>
 
             <div class="modal-body">
-                <form id="form_connexion" action="index.php?action=connexion" method="POST">
+                <form id="form_connexion" action="{{ path('am_site_connexion') }}" method="POST">
                     <h4>Vous avez un compte administrateur ? C'est par ici :</h4>
                     <div class="form-group">
                         <label for="email">Email : </label>
@@ -45,7 +45,7 @@
                         <input type="password" id="password" name="password" required class="form-control">
                     </div>
                     <div>
-                        <a href="index.php?action=inscription">Pas encore inscrit ? C'est par là !</a>
+                        <a href="{{ path('am_site_inscription') }}">Pas encore inscrit ? C'est par là !</a>
                     </div><br>
                     <button type="submit" id="btn_connexion" class="btn btn-primary" name="btn_connexion" data-dismiss="modal">
                         <span class="glyphicon glyphicon-log-in"> Connexion</span></button>

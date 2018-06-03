@@ -22,6 +22,10 @@ am_site_contact:
     path:    /contact
     defaults: { _controller: AMSiteBundle:Site:contact }
 
+am_site_connexion:
+    path:    /connexion
+    defaults: { _controller: AMSiteBundle:Site:connexion }
+
 am_site_inscription:
     path:    /inscription
     defaults: { _controller: AMSiteBundle:Site:inscription }

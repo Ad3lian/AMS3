@@ -76,10 +76,6 @@ class SiteController extends Controller
             'noPano' => $noPano
         ));
     }
-    public function inscriptionAction()
-    {
-        return $this->render('AMSiteBundle:Site:inscription.html.twig');
-    }
     public function cvAction()
     {
         $noPano = false;
@@ -94,5 +90,13 @@ class SiteController extends Controller
         return $this->render('AMSiteBundle:Site:contact.html.twig', array(
             'noPano' => $noPano
         ));
+    }
+    public function connexionAction()
+    {
+
+    }
+    public function inscriptionAction()
+    {
+        return $this->render('AMSiteBundle:Site:inscription.html.twig');
     }
 }

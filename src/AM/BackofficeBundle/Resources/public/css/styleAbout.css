@@ -1,0 +1,136 @@
+/* ABOUT ME */
+body {
+        background-color: #F2F1EF;
+        width:auto;
+        margin:0;
+        padding:0;
+    }
+#panorama{
+    padding-top: 50px;
+	max-width:100%;
+	margin:auto;
+	height:530px;
+	overflow:hidden;
+        margin-bottom: 10px;
+}
+[class*="div_aboutMe"] {
+    margin:auto;
+    width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+h1, h3{	text-align:center; }
+h2, h3{	font-size:0.8em; }
+
+.aboutTitle { 
+    width:100%;
+    max-width:1000px;
+    height:30px;
+    margin:auto;
+/*    padding:10px 10px 10px 10px;*/
+    font-size:1.5em;
+    text-transform: uppercase;
+    text-align:center;
+    color:#F2F1EF;
+    background-color: #22313F;
+    border-radius : 5px 5px;
+}
+
+.aboutContent{
+    width:100%;
+    max-width:1000px;
+    margin:auto;
+    padding:10px 10px 10px 10px;
+    text-align: justify;
+    background-color:white;
+    border-radius : 0 0 5px 5px;
+}
+
+a{ text-decoration:none; color:#22313F; }
+
+/* VERSION MOBILE */
+@media (max-width: 780px)
+{
+    *{ box-sizing: border-box; }
+    
+    body {
+        width:auto;
+        margin:0;
+        padding:0;
+    }
+    
+    .header_nav{
+	display:block;
+	width:100%;
+	margin:auto;
+    }
+    
+    #logo{
+	display:block;
+	width:auto;
+	font-size: 2.5em;
+    }
+    
+    nav{
+        display:block;
+        margin:auto;
+	width:auto;
+        text-align:center;
+    }
+	
+    ul{ Display:block; background-color: #F2F1EF; }
+	
+    li{
+        display:block;
+	width:auto;
+	font-size:1.5em;
+	list-style-type:none;
+	height:40px;
+    }
+    #panorama{ display:none; }
+    
+/*
+    .section_About{
+        display:block;
+        width:100%;
+        margin-top:200px;
+        text-align:center;
+    }
+*/
+        
+    [class*="div_aboutMe"] {
+        display:block;
+        width:95%;
+        margin:auto;
+        background-color:white;
+        border-radius : 0 0 5px 5px;
+        margin-bottom: 20px;
+    }
+    
+    .aboutTitle { 
+        width:100%;
+        height:40px;
+        margin:auto;
+        font-size:1.2em;
+        text-transform: uppercase;
+        text-align:center;
+        color:#F2F1EF;
+        background-color: #22313F;
+        border-radius : 5px 5px;
+    }
+
+    .aboutContent{
+	display:block;
+        width:100%;
+        margin:auto;
+        padding:10px;
+        text-align: justify;
+        background-color:white;
+        border-radius : 0 0 5px 5px;
+    }
+    
+    h1, h3{ text-align:center; }
+    h2, h3{ font-size:0.8em; }
+}
