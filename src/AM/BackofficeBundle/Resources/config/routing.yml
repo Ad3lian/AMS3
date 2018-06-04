@@ -14,6 +14,10 @@ am_backoffice_addpost:
    path:    /bo/addpost
    defaults: { _controller: AMBackofficeBundle:Backoffice:addpost }
 
+am_backoffice_addaddpost:
+   path:    /bo/addaddpost
+   defaults: { _controller: AMBackofficeBundle:Backoffice:addaddpost }
+
 am_backoffice_aboutme:
    path:    /bo/myabout
    defaults: { _controller: AMBackofficeBundle:Backoffice:aboutme }
