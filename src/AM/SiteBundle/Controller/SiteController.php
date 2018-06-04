@@ -5,6 +5,7 @@ namespace AM\SiteBundle\Controller;
 use AM\SiteBundle\Entity\AboutMe;
 use AM\SiteBundle\Entity\Posts;
 use AM\SiteBundle\Entity\Register;
+use AM\SiteBundle\Entity\Emails;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\HttpFoundation\Request;
@@ -92,11 +93,51 @@ class SiteController extends Controller
             'noPano' => $noPano
         ));
     }
-    public function contactAction()
+    public function contactAction(Request $request)
     {
         $noPano = false;
+
+        //Création de l'objet
+        $contact = new Emails();
+
+        //On crée le FormBuilder
+        $formBuilder = $this->get('form.factory')->createBuilder(FormType::class, $contact);
+
+        //On ajoute les champs
+        $formBuilder
+            ->Add('name',      TextType::class)
+            ->Add('firstname', TextType::class)
+            ->Add('email',     TextType::class)
+            ->Add('message',   TextareaType::class)
+            ->Add('Envoyer', SubmitType::class)
+        ;
+
+        //génération du formulaire
+        $form = $formBuilder->getForm();
+
+        //si la requête est en POST
+        if($request->isMethod('POST')) {
+            $form->handleRequest($request);
+
+            if($form->isValid()) {
+                //On récupère l'EntityManager
+                $em = $this->getDoctrine()->getManager();
+
+                //On présiste l'entité
+                $em->persist($contact);
+
+                //On flush tout ce qui est persisté
+                $em->flush();
+
+                $request->getSession()->getFlashBag()->add('notice', 'Message enregistré.');
+
+                return $this->redirectToRoute('am_site_index');
+            }
+        }
+
         return $this->render('AMSiteBundle:Site:contact.html.twig', array(
-            'noPano' => $noPano
+            'form' => $form->createView(),
+            'noPano' => $noPano,
         ));
     }
     public function connexionAction()

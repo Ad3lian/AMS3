@@ -42,9 +42,9 @@
                                 </a>
                             </div>
                             <!--
-                                                                <div class="form-group col-md-3">
-                                                                    <a href="" role="button" class="btn btn-danger btn-lg btn-block">Google</a>
-                                                                </div>
+                                <div class="form-group col-md-3">
+                                    <a href="" role="button" class="btn btn-danger btn-lg btn-block">Google</a>
+                                </div>
                         -->
                         </div>
 
@@ -60,56 +60,125 @@
                         Contact:
                     </div>
                     <div class="panel-body">
+
                         <div class="row">
                             <div class="col-12" style="padding-left: 20px;">
                                 Si vous préfèrez me laisser un message directement, c'est ici :
                             </div>
                         </div><br>
 
-                        <form action="index.php?action=addContact" method="post">
-                            <div class="row">
-                                <div class="form-group col-md-6">
-                                    <label for="nom">Nom * : </label>
-                                    <input type="text" id="nom" name="nom" required maxlength="30" placeholder="Nom" class="form-control">
-                                </div>
+                        {{ form_start(form, {'attr': {'class': 'form-group'}}) }}
 
-                                <div class="form-group col-md-6">
-                                    <label for="prenom">Prénom * : </label>
-                                    <input type="text" id="prenom" name="prenom" required maxlength="30" placeholder="Prénom" class="form-control">
-                                </div>
+                        {# Les erreurs générales du formulaire. #}
+                        {{ form_errors(form) }}
 
+                        {# Génération manuelle et éclatée : #}
+                        <div class="form-group">
+                            {# Génération du label. #}
+                            {{ form_label(form.name, "Nom *:", {'label_attr': {'class': 'col-sm-2 my-1 mr-2 control-label'}}) }}
+
+                            {# Affichage des erreurs pour ce champ précis. #}
+                            {{ form_errors(form.name) }}
+
+                            <div class="col-sm-12">
+                                {# Génération de l'input. #}
+                                {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
                             </div>
-                            <div id="error_nom" class="alert alert-danger" style="display: none;">
-                                Veuillez saisir un nom.
+                        </div>
+
+                        {# Idem pour un autre champ. #}
+                        <div class="form-group">
+                            {{ form_label(form.firstname, "Prénom *:", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+                            {{ form_errors(form.firstname) }}
+                            <div class="col-sm-12">
+                                {{ form_widget(form.firstname, {'attr': {'class': 'form-control'}}) }}
                             </div>
-                            <div id="error_prenom" class="alert alert-danger" style="display: none;">
-                                Veuillez saisir un prénom.
+                        </div>
+
+                        {# Idem pour un autre champ. #}
+                        <div class="form-group">
+                            {{ form_label(form.email, "Email *:", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+                            {{ form_errors(form.email) }}
+                            <div class="col-sm-12">
+                                {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
                             </div>
-                            <div id="error_nom_prenom" class="alert alert-danger" style="display: none;">
-                                Veuillez saisir un nom et un prénom.
+                        </div>
+
+                        {# Idem pour un autre champ. #}
+                        <div class="form-group">
+                            {{ form_label(form.message, "Message *:", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+                            {{ form_errors(form.message) }}
+                            <div class="col-sm-12">
+                                {{ form_widget(form.message, {'attr': {'class': 'form-control'}}) }}<br>
+                                * : Tous les champs sont obligatoires.
                             </div>
-                            <div class="form-group">
-                                <label for="email">Email * : </label>
-                                <input type="text" id="email" name="email" required  placeholder="Email" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-1">
+                                {# Pour le bouton, pas de label ni d'erreur, on affiche juste le widget #}
+                                {{ form_widget(form.Envoyer, {'attr': {'class': 'btn btn-primary', 'style': 'margin-top:10px;'}}) }}
                             </div>
-                            <div id="error_email" class="alert alert-danger" style="display: none;">
-                                Veuillez saisir une adresse email.
-                            </div>
-                            <div id="error_email2" class="alert alert-danger" style="display: none;">
-                                Veuillez saisir correctement l'email.
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message * : </label>
-                                <textarea id="message" name="message" required placeholder="Votre message ici" class="form-control" rows="3"></textarea>
-                            </div>
-                            <div id="error_message" class="alert alert-danger" style="display: none;">
-                                Veuillez saisir un message.
-                            </div>
-                            * : Tous les champs sont obligatoires.
-                            <div><br>
-                                <button type="submit" id="btn_contact" name="btn_contact" class="btn btn-primary">Envoyer</button>
-                            </div>
-                        </form>
+                        </div>
+
+                        {# Génération automatique des champs pas encore écrits.
+                           Dans cet exemple, ce serait le champ CSRF (géré automatiquement par Symfony !)
+                           et tous les champs cachés (type « hidden »). #}
+                        {{ form_rest(form) }}
+
+                        {# Fermeture de la balise <form> du formulaire HTML #}
+                        {{ form_end(form) }}
+
+                        {#<div class="row">#}
+                            {#<div class="col-12" style="padding-left: 20px;">#}
+                                {#Si vous préfèrez me laisser un message directement, c'est ici :#}
+                            {#</div>#}
+                        {#</div><br>#}
+
+                        {#<form action="index.php?action=addContact" method="post">#}
+                            {#<div class="row">#}
+                                {#<div class="form-group col-md-6">#}
+                                    {#<label for="nom">Nom * : </label>#}
+                                    {#<input type="text" id="nom" name="nom" required maxlength="30" placeholder="Nom" class="form-control">#}
+                                {#</div>#}
+
+                                {#<div class="form-group col-md-6">#}
+                                    {#<label for="prenom">Prénom * : </label>#}
+                                    {#<input type="text" id="prenom" name="prenom" required maxlength="30" placeholder="Prénom" class="form-control">#}
+                                {#</div>#}
+
+                            {#</div>#}
+                            {#<div id="error_nom" class="alert alert-danger" style="display: none;">#}
+                                {#Veuillez saisir un nom.#}
+                            {#</div>#}
+                            {#<div id="error_prenom" class="alert alert-danger" style="display: none;">#}
+                                {#Veuillez saisir un prénom.#}
+                            {#</div>#}
+                            {#<div id="error_nom_prenom" class="alert alert-danger" style="display: none;">#}
+                                {#Veuillez saisir un nom et un prénom.#}
+                            {#</div>#}
+                            {#<div class="form-group">#}
+                                {#<label for="email">Email * : </label>#}
+                                {#<input type="text" id="email" name="email" required  placeholder="Email" class="form-control">#}
+                            {#</div>#}
+                            {#<div id="error_email" class="alert alert-danger" style="display: none;">#}
+                                {#Veuillez saisir une adresse email.#}
+                            {#</div>#}
+                            {#<div id="error_email2" class="alert alert-danger" style="display: none;">#}
+                                {#Veuillez saisir correctement l'email.#}
+                            {#</div>#}
+                            {#<div class="form-group">#}
+                                {#<label for="message">Message * : </label>#}
+                                {#<textarea id="message" name="message" required placeholder="Votre message ici" class="form-control" rows="3"></textarea>#}
+                            {#</div>#}
+                            {#<div id="error_message" class="alert alert-danger" style="display: none;">#}
+                                {#Veuillez saisir un message.#}
+                            {#</div>#}
+                            {#* : Tous les champs sont obligatoires.#}
+                            {#<div><br>#}
+                                {#<button type="submit" id="btn_contact" name="btn_contact" class="btn btn-primary">Envoyer</button>#}
+                            {#</div>#}
+                        {#</form>#}
                     </div>
                 </div>
             </div>

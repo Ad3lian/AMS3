@@ -20,7 +20,7 @@
                     </div>
                     <div class="panel-body">
                         <div>
-                            {{ post.content|striptags|raw }}
+                            {{ post.content|raw }}
                         </div>
                         <div>
                             Crée le {{ post.creationDate|date('Y-m-d H:i:s') }} <br/>
