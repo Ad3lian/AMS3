@@ -6,6 +6,7 @@ use AM\SiteBundle\Entity\AboutMe;
 use AM\SiteBundle\Entity\Posts;
 use AM\SiteBundle\Entity\Register;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
@@ -115,8 +116,8 @@ class SiteController extends Controller
             ->Add('name',      TextType::class)
             ->Add('firstname', TextType::class)
             ->Add('email',     TextType::class)
-            ->Add('password',  TextType::class)
-            ->Add('save',      SubmitType::class)
+            ->Add('password',  PasswordType::class)
+            ->Add('Inscription', SubmitType::class)
         ;
 
         //génération du formulaire

@@ -20,51 +20,111 @@
                         Inscription :
                     </div>
                     <div class="panel-body">
-                        <form id="form_inscription" action="{{ path('am_site_inscription') }}" method="POST">
-                            <div class="form-group ">
-                                <label for="nom">Nom * : </label>
-                                <input type="text" id="ins_nom" name="nom" required maxlength="35" placeholder="Nom" class="form-control">
+                        {{ form_start(form, {'attr': {'class': 'form-group'}}) }}
+
+                        {# Les erreurs générales du formulaire. #}
+                        {{ form_errors(form) }}
+
+                        {# Génération manuelle et éclatée : #}
+                        <div class="form-group">
+                            {# Génération du label. #}
+                            {{ form_label(form.name, "Nom *:", {'label_attr': {'class': 'col-sm-2 my-1 mr-2 control-label'}}) }}
+
+                            {# Affichage des erreurs pour ce champ précis. #}
+                            {{ form_errors(form.name) }}
+
+                            <div class="col-sm-12">
+                                {# Génération de l'input. #}
+                                {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
                             </div>
-                            <div class="form-group">
-                                <label for="prenom">Prénom * : </label>
-                                <input type="text" id="ins_prenom" name="prenom" required maxlength="35" placeholder="Prénom" class="form-control">
+                        </div>
+
+                        {# Idem pour un autre champ. #}
+                        <div class="form-group">
+                            {{ form_label(form.firstname, "Prénom *:", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+                            {{ form_errors(form.firstname) }}
+                            <div class="col-sm-12">
+                                {{ form_widget(form.firstname, {'attr': {'class': 'form-control'}}) }}
                             </div>
-                            <div id="error_nom" class="alert alert-danger" style="display: none;">
-                                Veuillez saisir un nom.
+                        </div>
+
+                        {# Idem pour un autre champ. #}
+                        <div class="form-group">
+                            {{ form_label(form.email, "Email *:", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+                            {{ form_errors(form.email) }}
+                            <div class="col-sm-12">
+                                {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
                             </div>
-                            <div id="error_prenom" class="alert alert-danger" style="display: none;">
-                                Veuillez saisir un prénom.
+                        </div>
+
+                        {# Idem pour un autre champ. #}
+                        <div class="form-group">
+                            {{ form_label(form.password, "Mot de passe *:", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+                            {{ form_errors(form.password) }}
+                            <div class="col-sm-12">
+                                {{ form_widget(form.password, {'attr': {'class': 'form-control'}}) }}
                             </div>
-                            <div id="error_nom_prenom" class="alert alert-danger" style="display: none;">
-                                Veuillez saisir un nom et un prénom.
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-1">
+                                {# Pour le bouton, pas de label ni d'erreur, on affiche juste le widget #}
+                                {{ form_widget(form.Inscription, {'attr': {'class': 'btn btn-primary', 'style': 'margin-top:10px;'}}) }}
                             </div>
-                            <div class="form-group">
-                                <label for="email">Email * : </label>
-                                <input type="text" id="ins_email" name="email" required placeholder="Email" class="form-control">
-                            </div>
-                            <div id="error_email" class="alert alert-danger" style="display: none;">
-                                Veuillez saisir un email.
-                            </div>
-                            <div id="error_email2" class="alert alert-danger" style="display: none;">
-                                Veuillez saisir correctement l'email.
-                            </div>
-                            <div class="col-12 form-group">
-                                <label for="password">Mot de passe * : </label>
-                                <input type="password" id="ins_password" name="password" required maxlength="12" placeholder="Mot de passe" class="form-control">
-                            </div>
-                            <div id="error_password" class="alert alert-danger" style="display: none;">
-                                Veuillez saisir un mot de passe.
-                            </div>
-                            <div>
-                                <button type="submit" id="btn_inscription" class="btn btn-primary" name="btn_inscription">Inscription</button>
-                            </div>
-                        </form>
+                        </div>
+
+                        {# Génération automatique des champs pas encore écrits.
+                           Dans cet exemple, ce serait le champ CSRF (géré automatiquement par Symfony !)
+                           et tous les champs cachés (type « hidden »). #}
+                        {{ form_rest(form) }}
+
+                        {# Fermeture de la balise <form> du formulaire HTML #}
+                        {{ form_end(form) }}
                     </div>
                 </div>
             </div>
-            <div class="well">
-                {{ form(form) }}
-            </div>
+            {#<div class="well">#}
+                {#{{ form(form) }}#}
+                {#<form id="form_inscription" action="{{ path('am_site_inscription') }}" method="POST">#}
+                    {#<div class="form-group ">#}
+                        {#<label for="nom">Nom * : </label>#}
+                        {#<input type="text" id="ins_nom" name="nom" required maxlength="35" placeholder="Nom" class="form-control">#}
+                    {#</div>#}
+                    {#<div class="form-group">#}
+                        {#<label for="prenom">Prénom * : </label>#}
+                        {#<input type="text" id="ins_prenom" name="prenom" required maxlength="35" placeholder="Prénom" class="form-control">#}
+                    {#</div>#}
+                    {#<div id="error_nom" class="alert alert-danger" style="display: none;">#}
+                        {#Veuillez saisir un nom.#}
+                    {#</div>#}
+                    {#<div id="error_prenom" class="alert alert-danger" style="display: none;">#}
+                        {#Veuillez saisir un prénom.#}
+                    {#</div>#}
+                    {#<div id="error_nom_prenom" class="alert alert-danger" style="display: none;">#}
+                        {#Veuillez saisir un nom et un prénom.#}
+                    {#</div>#}
+                    {#<div class="form-group">#}
+                        {#<label for="email">Email * : </label>#}
+                        {#<input type="text" id="ins_email" name="email" required placeholder="Email" class="form-control">#}
+                    {#</div>#}
+                    {#<div id="error_email" class="alert alert-danger" style="display: none;">#}
+                        {#Veuillez saisir un email.#}
+                    {#</div>#}
+                    {#<div id="error_email2" class="alert alert-danger" style="display: none;">#}
+                        {#Veuillez saisir correctement l'email.#}
+                    {#</div>#}
+                    {#<div class="col-12 form-group">#}
+                        {#<label for="password">Mot de passe * : </label>#}
+                        {#<input type="password" id="ins_password" name="password" required maxlength="12" placeholder="Mot de passe" class="form-control">#}
+                    {#</div>#}
+                    {#<div id="error_password" class="alert alert-danger" style="display: none;">#}
+                        {#Veuillez saisir un mot de passe.#}
+                    {#</div>#}
+                    {#<div>#}
+                        {#<button type="submit" id="btn_inscription" class="btn btn-primary" name="btn_inscription">Inscription</button>#}
+                    {#</div>#}
+                {#</form>#}
+            {#</div>#}
         </div>
         <div class="col-12 col-md-2 col-lg-2 col-xl-3 bd-toc"></div>
     </div>
