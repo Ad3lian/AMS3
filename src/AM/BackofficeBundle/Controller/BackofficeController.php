@@ -101,6 +101,32 @@ class BackofficeController extends Controller
             'myabouts' => $myabouts
         ));
     }
+    public function changemyaboutAction($id, REQUEST $request)
+    {
+        $title = $request->get('titre');
+        $content = $request->get('message');
+
+        $em = $this->getDoctrine()->getManager();
+
+        $advert = $em->getRepository('AMBackofficeBundle:AboutMe')->find($id);
+
+        $advert->setTitle($title);
+        $advert->setContent($content);
+
+
+        $em->flush();
+
+        $myabouts = $this
+            ->getDoctrine()
+            ->getManager()
+            ->getRepository('AMBackofficeBundle:AboutMe')
+            ->findAll()
+        ;
+
+        return $this->render('AMBackofficeBundle:Backoffice:manager_AboutMe.html.twig', array(
+            'myabouts' => $myabouts
+        ));
+    }
     public function mypostsAction()
     {
         $myposts = $this

@@ -1,13 +1,13 @@
 $(function() {
-    $('#summernote').summernote({
-        height: 300,
-        theme: 'monokai'
-    });
-
-    $('.message').summernote({
-        height: 300,
-        theme: 'monokai'
-    });
+    // $('#summernote').summernote({
+    //     height: 300,
+    //     theme: 'monokai'
+    // });
+    //
+    // $('.message').summernote({
+    //     height: 300,
+    //     theme: 'monokai'
+    // });
     
     // Deconnexion
     $('#btn_deconnexion').on("click", function() {

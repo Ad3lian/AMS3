@@ -20,10 +20,18 @@
 
 {% block javascripts %}
     <script type="text/javascript" src="{{ asset('public/js/jquery.js')}}"></script>
-    <script type="text/javascript" src="../public/js/bo.js"></script>
+    <script type="text/javascript" src="{{ asset('public/js/bo.js')}}"></script>
     <script type="text/javascript" src="{{ asset('public/js/bootstrap.js')}}"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+    <script type="text/javascript" src="https://cdn.ckeditor.com/ckeditor5/10.0.1/classic/ckeditor.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    {#<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>#}
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
 {% endblock %}
 
 </body>

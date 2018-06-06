@@ -22,6 +22,10 @@ am_backoffice_aboutme:
    path:    /bo/myabout
    defaults: { _controller: AMBackofficeBundle:Backoffice:aboutme }
 
+am_backoffice_changemyabout:
+    path:    /bo/changeabout/{id}
+    defaults: { _controller: AMBackofficeBundle:Backoffice:changemyabout }
+
 am_backoffice_myposts:
    path:    /bo/myposts
    defaults: { _controller: AMBackofficeBundle:Backoffice:myposts }

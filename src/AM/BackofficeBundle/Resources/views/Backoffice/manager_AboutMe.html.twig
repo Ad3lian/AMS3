@@ -47,8 +47,43 @@
                                                 <input type="hidden" value="{{ myabout.id }}">
                                             </form>
                                             <button class="btn btn-primary modifier_page" type="button"
-                                                    value="{{ myabout.id }}">Modifier
+                                                    data-toggle="collapse" data-target="#modifier_myabout{{ myabout.id }}"
+                                                    aria-expanded="false" value="{{ myabout.id }}">Modifier
                                             </button><br><br>
+                                        </div>
+                                    </div>
+
+                                    <div class="collapse" id="modifier_myabout{{ myabout.id }}"
+                                         aria-expanded="true" style="">
+                                        <div class="row">
+                                            <div class="col-9 col-md-9 col-lg-9 col-xl-9">
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <form action="{{ path('am_backoffice_changemyabout', { 'id': myabout.id }) }}" method="POST">
+                                                            <div class="form-group ">
+                                                                <label for="nom">Titre * : </label>
+                                                                <input type="text" id="titre" name="titre" required
+                                                                       maxlength="35" placeholder="Titre"
+                                                                       value="{{ myabout.title }}"
+                                                                       class="form-control">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="message">Message * : </label>
+                                                                <textarea id="editor" name="message" required placeholder="Message"
+                                                                          class="form-control" rows="15">{{ myabout.content|raw }}
+                                                                </textarea>
+                                                            </div>
+                                                            <button id="modifier_momPost" class="btn btn-danger" type="submit"
+                                                                    value="{{ myabout.id }}">Confirmer
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 col-md-3 col-lg-3 col-xl-3">
+                                            </div>
                                         </div>
                                     </div>
 

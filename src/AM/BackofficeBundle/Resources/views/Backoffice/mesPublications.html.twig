@@ -59,12 +59,12 @@
                                                 <button id="delete_post" class="btn btn-danger" type="submit"
                                                         value="{{ mypost.id }}">Supprimer
                                                 </button>
-                                                <button class="btn btn-primary" type="button" >Annuler</button>
+                                                <button class="btn btn-primary" type="button" style="margin-top: 10px;margin-bottom: 10px;">Annuler</button>
                                                 </form>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="collapse" class="collapse" id="modifier_monPost{{ mypost.id }}"
+                                    <div class="collapse" id="modifier_monPost{{ mypost.id }}"
                                          aria-expanded="true" style="">
                                         <div class="row">
                                             <div class="col-9 col-md-9 col-lg-9 col-xl-9">
@@ -82,7 +82,7 @@
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="message">Message * : </label>
-                                                                <textarea id="message" name="message" required placeholder="Message"
+                                                                <textarea id="editor" name="message" required placeholder="Message"
                                                                           class="form-control" rows="15">{{ mypost.content|raw }}
                                                                 </textarea>
                                                             </div>
@@ -93,10 +93,7 @@
                                                     </div>
                                                 </div>                                             
                                             </div>
-                                            <div class="col-3 col-md-3 col-lg-3 col-xl-3"> 
-                                                {#<form action="{{ path('am_backoffice_changemypost', { 'id': mypost.id }) }}" method="POST">#}
-                                                    {##}
-                                                {#</form>#}
+                                            <div class="col-3 col-md-3 col-lg-3 col-xl-3">
                                             </div>
                                         </div>        
                                     </div>
@@ -112,8 +109,6 @@
             </div>
         </div>
     </div>
-    {#<div class="col-12 col-md-2 col-lg-2 col-xl-1 bd-content" role="main">#}
-    {#</div>#}
 </div>
 
 {% endblock %}
