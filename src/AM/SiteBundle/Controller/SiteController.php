@@ -4,6 +4,7 @@ namespace AM\SiteBundle\Controller;
 
 use AM\SiteBundle\Entity\AboutMe;
 use AM\SiteBundle\Entity\Posts;
+use AM\SiteBundle\Entity\Comments;
 use AM\SiteBundle\Entity\Register;
 use AM\SiteBundle\Entity\Emails;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -84,6 +85,25 @@ class SiteController extends Controller
             'listComments' => $listComments,
             'noPano' => $noPano
         ));
+    }
+    public function commentAction($id, REQUEST $request)
+    {
+        $author = $request->get('author');
+        $comment = $request->get('comment');
+
+        $em = $this->getDoctrine()->getManager();
+
+        $advert = new Comments();
+
+        $advert->setAuthor($author);
+        $advert->setComment($comment);
+        $advert->setPostId($id);
+
+        $em->persist($advert);
+
+        $em->flush();
+
+        return $this->redirectToRoute('am_site_post', array('id' => $id));
     }
     public function cvAction()
     {
