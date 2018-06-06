@@ -184,8 +184,6 @@ class BackofficeController extends Controller
                 null,
                 null
             )
-<<<<<<< HEAD
-=======
         ;
 
         return $this->render('AMBackofficeBundle:Backoffice:messagerie.html.twig', array(
@@ -211,7 +209,6 @@ class BackofficeController extends Controller
                 null,
                 null
             )
->>>>>>> 5dc2227bd28b2e8bda70d688df62601217ef55d6
         ;
 
         return $this->render('AMBackofficeBundle:Backoffice:messagerie.html.twig', array(
