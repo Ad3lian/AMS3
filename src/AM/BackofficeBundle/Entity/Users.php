@@ -63,7 +63,6 @@ class Users
      */
     private $grade;
 
-
     /**
      * Get id
      *

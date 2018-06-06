@@ -1,6 +1,6 @@
 {% extends "AMBackofficeBundle::layout.html.twig" %}
 
-{% block title %}{{ parent() }} - Messagerie {% endblock %}
+{% block title %}{{ parent() }} - Mes publications {% endblock %}
 
 
 {#   MENU    #}
@@ -14,12 +14,12 @@
         <div class="col-12 col-md-3 col-lg-2 col-xl-3 bd-sidebar">
             {{ include("AMBackofficeBundle:Backoffice:navBar.html.twig") }}
         </div>
-        <div class="col-12 col-md-7 col-lg-8 col-xl-8 bd-content" role="main">
+        <div class="col-12 col-md-9 col-lg-9 col-xl-9 bd-content" role="main">
             <div class="container-fluid">
                 <div class="row" style="margin-top: 80px;">
-                    <div class="col-2 col-md-2 col-lg-2 col-xl-2 bd-sidebar">
+                    <div class="col-1 col-md-1 col-lg-1 col-xl-1 bd-sidebar">
                     </div>
-                    <div class="col-8 col-md-8 col-lg-8 col-xl-8 bd-content" role="main">
+                    <div class="col-10 col-md-10 col-lg-10 col-xl-10 bd-content" role="main">
 
                         <div class="panel panel-default">
                             <div class="panel-heading">
@@ -36,7 +36,7 @@
                                                 </div>
                                                 <div class="panel-body">
                                                     <div>
-                                                        {{ mypost.content }}
+                                                        {{ mypost.content|raw }}
                                                     </div><br>
                                                     <div>
                                                         Crée le {{ mypost.creationDate|date('Y-m-d H:i:s') }}<br/>
@@ -83,7 +83,7 @@
                                                             <div class="form-group">
                                                                 <label for="message">Message * : </label>
                                                                 <textarea id="message" name="message" required placeholder="Message"
-                                                                          class="form-control" rows="15">{{ mypost.content }}
+                                                                          class="form-control" rows="15">{{ mypost.content|raw }}
                                                                 </textarea>
                                                             </div>
                                                         </form>
@@ -106,13 +106,13 @@
                     </div>
 
                 </div>
-                <div class="col-2 col-md-2 col-lg-2 col-xl-2 bd-content" role="main">
+                <div class="col-1 col-md-1 col-lg-1 col-xl-1 bd-content" role="main">
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-12 col-md-2 col-lg-2 col-xl-1 bd-content" role="main">
-    </div>
+    {#<div class="col-12 col-md-2 col-lg-2 col-xl-1 bd-content" role="main">#}
+    {#</div>#}
 </div>
 
 {% endblock %}
