@@ -123,7 +123,12 @@ class BackofficeController extends Controller
             ->getDoctrine()
             ->getManager()
             ->getRepository('AMBackofficeBundle:Email')
-            ->findAll()
+            ->findBy(
+                array(),
+                array('emailDate' => 'desc'),
+                null,
+                null
+            )
         ;
 
         return $this->render('AMBackofficeBundle:Backoffice:messagerie.html.twig', array(
