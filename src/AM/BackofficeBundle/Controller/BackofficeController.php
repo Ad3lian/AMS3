@@ -2,6 +2,9 @@
 
 namespace AM\BackofficeBundle\Controller;
 
+use AM\BackofficeBundle\Entity\Users;
+use AM\BackofficeBundle\Entity\Posts;
+use AM\BackofficeBundle\Entity\Email;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -30,8 +33,22 @@ class BackofficeController extends Controller
             'users' => $users
         ));
     }
-    public function changeusersAction($id)
+    public function changeusersAction($id, REQUEST $request)
     {
+        $nom = $request->get('nom');
+        $prenom = $request->get('prenom');
+        $email = $request->get('email');
+
+        $em = $this->getDoctrine()->getManager();
+
+        $advert = $em->getRepository('AMBackofficeBundle:Users')->find($id);
+
+        $advert->setName($nom);
+        $advert->setFirstname($prenom);
+        $advert->setEmail($email);
+
+        $em->flush();
+
         $users = $this
             ->getDoctrine()
             ->getManager()
@@ -52,6 +69,23 @@ class BackofficeController extends Controller
     {
         return $this->render('AMBackofficeBundle:Backoffice:ajoutArticle.html.twig');
     }
+    public function addaddpostAction(REQUEST $request)
+    {
+        $title = $request->get('title');
+        $content = $request->get('content');
+
+        $advert = new Posts();
+        $advert->setTitle($title);
+        $advert->setContent($content);
+
+        $em = $this->getDoctrine()->getManager();
+
+        $em->persist($advert);
+
+        $em->flush();
+
+        return $this->redirectToRoute('am_backoffice_myposts');
+    }
     public function aboutmeAction()
     {
         $myabouts = $this
@@ -71,8 +105,12 @@ class BackofficeController extends Controller
             ->getDoctrine()
             ->getManager()
             ->getRepository('AMBackofficeBundle:Posts')
-            ->findAll()
-        ;
+            ->findBy(
+                array('author' => 'Adrien'),
+                array('creationDate' => 'desc'),
+                null,
+                null
+            );
 
         return $this->render('AMBackofficeBundle:Backoffice:mesPublications.html.twig', array(
             'myposts' => $myposts
@@ -97,7 +135,12 @@ class BackofficeController extends Controller
             ->getDoctrine()
             ->getManager()
             ->getRepository('AMBackofficeBundle:Usertemp')
-            ->findAll()
+            ->findBy(
+                array(),
+                array('registerDate' => 'desc'),
+                null,
+                null
+            )
         ;
 
         return $this->render('AMBackofficeBundle:Backoffice:usersTemp.html.twig', array(
@@ -106,11 +149,23 @@ class BackofficeController extends Controller
     }
     public function removeusertempAction($id)
     {
+        $em = $this->getDoctrine()->getManager();
+
+        $advert = $em->getRepository('AMBackofficeBundle:Usertemp')->find($id);
+
+        $em->remove($advert);
+        $em->flush();
+
         $userstemp = $this
             ->getDoctrine()
             ->getManager()
             ->getRepository('AMBackofficeBundle:Usertemp')
-            ->findAll()
+            ->findBy(
+                array(),
+                array('registerDate' => 'desc'),
+                null,
+                null
+            )
         ;
 
         return $this->render('AMBackofficeBundle:Backoffice:usersTemp.html.twig', array(
@@ -129,6 +184,34 @@ class BackofficeController extends Controller
                 null,
                 null
             )
+<<<<<<< HEAD
+=======
+        ;
+
+        return $this->render('AMBackofficeBundle:Backoffice:messagerie.html.twig', array(
+            'emails' => $emails
+        ));
+    }
+    public function removemailAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $advert = $em->getRepository('AMBackofficeBundle:Email')->find($id);
+
+        $em->remove($advert);
+        $em->flush();
+
+        $emails = $this
+            ->getDoctrine()
+            ->getManager()
+            ->getRepository('AMBackofficeBundle:Email')
+            ->findBy(
+                array(),
+                array('emailDate' => 'desc'),
+                null,
+                null
+            )
+>>>>>>> 5dc2227bd28b2e8bda70d688df62601217ef55d6
         ;
 
         return $this->render('AMBackofficeBundle:Backoffice:messagerie.html.twig', array(

@@ -14,19 +14,19 @@
         <div class="col-12 col-md-3 col-lg-2 col-xl-3 bd-sidebar">
             {{ include("AMBackofficeBundle:Backoffice:navBar.html.twig") }}
         </div>
-        <div class="col-12 col-md-7 col-lg-8 col-xl-8 bd-content" role="main">
+        <div class="col-12 col-md-9 col-lg-9 col-xl-9 bd-content" role="main">
             <div class="container-fluid">
                 <div class="row" style="margin-top: 80px;">
-                    <div class="col-2 col-md-2 col-lg-2 col-xl-2 bd-sidebar">
+                    <div class="col-1 col-md-1 col-lg-1 col-xl-1 bd-sidebar">
                     </div>
-                    <div class="col-8 col-md-8 col-lg-8 col-xl-8 bd-content" role="main">
+                    <div class="col-10 col-md-10 col-lg-10 col-xl-10 bd-content" role="main">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <strong>Ajouter un Article :</strong>
 
                             </div>
                             <div class="panel-body">
-                                <form id="formAddPost" action="{{ path('am_backoffice_addpost') }}" method="post"
+                                <form id="formAddPost" action="{{ path('am_backoffice_addaddpost') }}" method="post"
                                       enctype="multipart/form-data">
                                     <div class="form-group">
                                         <label for="title">Titre * : </label>
@@ -49,27 +49,18 @@
                                     * : Tous les champs sont obligatoires.
                                     <div><br>
                                         <button type="submit" id="btn_addPost" name="btn_addPost"
-                                                class="btn btn-primary">
-
+                                            class="btn btn-primary">Confirmer
                                         </button>
                                     </div>
                                 </form>
                             </div>
+                        </div>
                     </div>
+                    <div class="col-1 col-md-1 col-lg-1 col-xl-1 bd-toc"></div>
                 </div>
-                <div class="col-12 col-md-2 col-lg-2 col-xl-2 bd-toc"></div>
-            </div>    
-        </div>
-        </div>
-        <div class="col-2 col-md-2 col-lg-2 col-xl-2 bd-content" role="main">
-        </div>
-    </div>
-</div>
             </div>
-        <div class="col-12 col-md-2 col-lg-2 col-xl-1 bd-content" role="main">
         </div>
     </div>
 </div>
-
 
 {% endblock %}

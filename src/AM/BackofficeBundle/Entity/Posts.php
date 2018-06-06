@@ -49,6 +49,11 @@ class Posts
      */
     private $author;
 
+    public function __construct()
+    {
+        $this->creationDate = new \DateTime();
+        $this->author = 'Adrien';
+    }
 
     /**
      * Get id
