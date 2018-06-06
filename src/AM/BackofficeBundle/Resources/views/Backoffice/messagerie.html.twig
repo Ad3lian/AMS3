@@ -47,13 +47,18 @@
                                                         data-target="#demo{{ email.id_messagerie }}"
                                                         aria-expanded="false">Supprimer
                                                 </button><br><br>
-                                                <button class="btn btn-primary" type="button" >Répondre</button><br><br>
+                                                <form action="{{ path('am_backoffice_sendmail', {'firstname': email.firstname }) }}"
+                                                      method="post">
+                                                <button class="btn btn-primary" type="submit" >
+                                                    Répondre
+                                                </button><br><br>
+                                                </form>
                                                 <div id="demo{{ email.id_messagerie }}" class="collapse"
                                                 aria-expanded="true" style="">
                                                     <form action="{{ path('am_backoffice_removemail', { 'id': email.id_messagerie }) }}"
                                                           method="POST">
                                                         <input type="text" id="id_messagerie" name="id_messagerie" style="display: none ;"
-                                                               value="{{ email.id_messagerie }}">
+                                                               value="{{ email.id_messagerie }}" >
                                                     Confirmer suppression ?
                                                     <button id="delete_mail" class="btn btn-danger" type="submit"
                                                             value="{{ email.id_messagerie }}">Supprimer

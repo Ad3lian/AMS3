@@ -2,6 +2,7 @@
 
 namespace AM\BackofficeBundle\Controller;
 
+use AM\BackofficeBundle\AMBackofficeBundle;
 use AM\BackofficeBundle\Entity\Users;
 use AM\BackofficeBundle\Entity\Usertemp;
 use AM\BackofficeBundle\Entity\Posts;
@@ -291,5 +292,22 @@ class BackofficeController extends Controller
         return $this->render('AMBackofficeBundle:Backoffice:messagerie.html.twig', array(
             'emails' => $emails
         ));
+    }
+    public function sendmailAction($firstname)
+    {
+        $message = (new \Swift_Message('Hello Email'))
+            ->setFrom('adrien-martin@hotmail.fr')
+            ->setTo('adrien-martin@hotmail.fr')
+            ->setBody(
+                $this->renderView(
+                    'AMBackofficeBundle:Emails:registration.html.twig',
+                    array('firstname' => $firstname)
+                ),
+                'text/html'
+            )
+            ;
+        $this->get('mailer')->send($message);
+
+        return $this->redirectToRoute('am_backoffice_mymails');
     }
 }

@@ -50,6 +50,10 @@ am_backoffice_mymails:
    path:    /bo/messagerie
    defaults: { _controller: AMBackofficeBundle:Backoffice:mail }
 
+am_backoffice_sendmail:
+    path:    /bo/sendmail{firstname}
+    defaults: { _controller: AMBackofficeBundle:Backoffice:sendmail }
+
 am_backoffice_removemail:
    path:    /bo/removemail/{id}
    defaults: { _controller: AMBackofficeBundle:Backoffice:removemail }
