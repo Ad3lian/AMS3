@@ -3,6 +3,7 @@
 namespace AM\BackofficeBundle\Controller;
 
 use AM\BackofficeBundle\Entity\Users;
+use AM\BackofficeBundle\Entity\Usertemp;
 use AM\BackofficeBundle\Entity\Posts;
 use AM\BackofficeBundle\Entity\Email;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -116,13 +117,55 @@ class BackofficeController extends Controller
             'myposts' => $myposts
         ));
     }
-    public function changemypostAction()
+    public function changemypostAction($id, REQUEST $request)
     {
+        $title = $request->get('titre');
+        $content = $request->get('message');
+
+        $em = $this->getDoctrine()->getManager();
+
+        $advert = $em->getRepository('AMBackofficeBundle:Posts')->find($id);
+
+        $advert->setTitle($title);
+        $advert->setContent($content);
+
+
+        $em->flush();
+
         $myposts = $this
             ->getDoctrine()
             ->getManager()
             ->getRepository('AMBackofficeBundle:Posts')
-            ->findAll()
+            ->findBy(
+                array('author' => 'Adrien'),
+                array('creationDate' => 'desc'),
+                null,
+                null
+            );
+
+        return $this->render('AMBackofficeBundle:Backoffice:mesPublications.html.twig', array(
+            'myposts' => $myposts
+        ));
+    }
+    public function deletemypostAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $advert = $em->getRepository('AMBackofficeBundle:Posts')->find($id);
+
+        $em->remove($advert);
+        $em->flush();
+
+        $myposts = $this
+            ->getDoctrine()
+            ->getManager()
+            ->getRepository('AMBackofficeBundle:Posts')
+            ->findBy(
+                array('author' => 'Adrien'),
+                array('creationDate' => 'desc'),
+                null,
+                null
+            )
         ;
 
         return $this->render('AMBackofficeBundle:Backoffice:mesPublications.html.twig', array(
@@ -171,6 +214,40 @@ class BackofficeController extends Controller
         return $this->render('AMBackofficeBundle:Backoffice:usersTemp.html.twig', array(
             'userstemp' => $userstemp
         ));
+    }
+    public function validateusertempAction($id)
+    {
+        //Connexion à la base temporaire
+        $em = $this->getDoctrine()->getManager();
+
+        $advert = $em->getRepository('AMBackofficeBundle:Usertemp')->find($id);
+
+        //récupération des données du compte temporaire
+        $name = $advert->getName();
+        $firstname = $advert->getFirstname();
+        $email = $advert->getEmail();
+        $password = $advert->getPassword();
+        $registerdate = $advert->getRegisterDate();
+
+
+        //création du compte permanent
+        $advert1 = new Users();
+        $advert1->setName($name);
+        $advert1->setFirstname($firstname);
+        $advert1->setEmail($email);
+        $advert1->setPassword($password);
+        $advert1->setRegisterDate($registerdate);
+
+        $em1 = $this->getDoctrine()->getManager();
+
+        $em1->persist($advert1);
+
+        $em1->flush();
+
+        //suppression du l'inscription temporaire
+        $em->remove($advert);
+
+        $em->flush();
     }
     public function mailAction()
     {

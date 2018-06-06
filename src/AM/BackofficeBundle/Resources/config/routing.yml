@@ -30,6 +30,10 @@ am_backoffice_changemypost:
     path:   /bo/changemypost/{id}
     defaults: { _controller: AMBackofficeBundle:Backoffice:changemypost }
 
+am_backoffice_deletemypost:
+    path:    /bo/deletemypost/{id}
+    defaults: { _controller: AMBackofficeBundle:Backoffice:deletemypost }
+
 am_backoffice_usertemp:
    path:    /bo/inscription
    defaults: { _controller: AMBackofficeBundle:Backoffice:usertemp }
@@ -37,6 +41,10 @@ am_backoffice_usertemp:
 am_backoffice_removeusertemp:
     path:    /bo/removeusertemp/{id}
     defaults: { _controller: AMBackofficeBundle:Backoffice:removeusertemp }
+
+am_backoffice_validateusertemp:
+    path:    /bo/validateusertemp/{id}
+    defaults: { _controller: AMBackofficeBundle:Backoffice:validateusertemp }
 
 am_backoffice_mymails:
    path:    /bo/messagerie

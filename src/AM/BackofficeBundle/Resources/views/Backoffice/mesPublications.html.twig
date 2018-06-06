@@ -53,7 +53,7 @@
                                             </button><br><br>
                                             <div id="demo{{ mypost.id }}" class="collapse"
                                             aria-expanded="true" style="">
-                                                <form action="index.php?action=delete_post" method="POST">
+                                                <form action="{{ path('am_backoffice_deletemypost', { 'id': mypost.id }) }}" method="POST">
                                                 Confirmer suppression ?
                                                     <input type="hidden" name="id" value="{{ mypost.id }}">
                                                 <button id="delete_post" class="btn btn-danger" type="submit"
@@ -86,16 +86,17 @@
                                                                           class="form-control" rows="15">{{ mypost.content|raw }}
                                                                 </textarea>
                                                             </div>
+                                                            <button id="modifier_momPost" class="btn btn-danger" type="submit"
+                                                                    value="{{ mypost.id }}">Confirmer
+                                                            </button>
                                                         </form>
                                                     </div>
                                                 </div>                                             
                                             </div>
                                             <div class="col-3 col-md-3 col-lg-3 col-xl-3"> 
-                                                <form action="{{ path('am_backoffice_changemypost', { 'id': mypost.id }) }}" method="POST">
-                                                    <button id="modifier_momPost" class="btn btn-danger" type="button"
-                                                            value="{{ mypost.id }}">Confirmer
-                                                    </button>
-                                                </form>
+                                                {#<form action="{{ path('am_backoffice_changemypost', { 'id': mypost.id }) }}" method="POST">#}
+                                                    {##}
+                                                {#</form>#}
                                             </div>
                                         </div>        
                                     </div>

@@ -46,7 +46,11 @@
                                                         value="{{ usertemp.id }}" type="submit" >Supprimer
                                                 </button>
                                             </form>
-
+                                            <form action="{{ path('am_backoffice_validateusertemp', { 'id': usertemp.id }) }}" method="POST">
+                                                <button class="btn btn-primary validate_userTemp" id="validate_userTemp"
+                                                        value="{{ usertemp.id }}" type="submit" style="margin-top: 20px;">Valider
+                                                </button>
+                                            </form>
                                         </div>
                                     </div>
                                 {% endfor %}

@@ -63,6 +63,11 @@ class Users
      */
     private $grade;
 
+    public function __construct()
+    {
+        $this->grade = 1;
+    }
+
     /**
      * Get id
      *
