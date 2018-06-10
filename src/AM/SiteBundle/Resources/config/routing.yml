@@ -34,3 +34,7 @@ am_site_inscription:
     path:    /inscription
     defaults: { _controller: AMSiteBundle:Site:inscription }
 
+am_backoffice_index:
+    path:     /bo/
+    defaults: { _controller: AMBackofficeBundle:Backoffice:index }
+

@@ -7,6 +7,7 @@ use AM\SiteBundle\Entity\Posts;
 use AM\SiteBundle\Entity\Comments;
 use AM\SiteBundle\Entity\Register;
 use AM\SiteBundle\Entity\Emails;
+use AM\SiteBundle\Entity\Users;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\HttpFoundation\Request;
@@ -105,14 +106,6 @@ class SiteController extends Controller
 
         return $this->redirectToRoute('am_site_post', array('id' => $id));
     }
-    public function cvAction()
-    {
-        $noPano = false;
-
-        return $this->render('AMSiteBundle:Site:cv.html.twig', array(
-            'noPano' => $noPano
-        ));
-    }
     public function contactAction(Request $request)
     {
         $noPano = false;
@@ -160,8 +153,52 @@ class SiteController extends Controller
             'noPano' => $noPano,
         ));
     }
-    public function connexionAction()
+    public function connexionAction(Request $request)
     {
+        $noPano = false;
+        var_dump($request);die;
+
+
+        //si la requête est en POST
+        if($request->isMethod('POST')) {
+
+            $email = $request->get('email');
+            $password = $request->get('password');
+
+            //cryptage du mot de passe avant enregistrement en base
+            $password = $request->get('password');
+            $pass_hache = password_hash($password, PASSWORD_DEFAULT);
+
+            $cnx = $this
+                ->getDoctrine()
+                ->getManager()
+                ->getRepository('AMSiteBundle:Users')
+                ->findOneBy(
+                    array('email' => $email),
+                    null,
+                    null,
+                    null
+                )
+            ;
+
+            var_dump($cnx);die;
+
+            if ($cnx == null)
+            {
+
+            }
+
+
+
+                $request->getSession()->getFlashBag()->add('notice', 'Connexion granted.');
+
+                return $this->redirectToRoute('am_backoffice_index');
+        }
+
+        return $this->render('AMSiteBundle:Site:contact.html.twig', array(
+            'noPano' => $noPano,
+        ));
+
 
     }
     public function inscriptionAction(Request $request)
@@ -191,6 +228,11 @@ class SiteController extends Controller
             if($form->isValid()) {
                 //On récupère l'EntityManager
                 $em = $this->getDoctrine()->getManager();
+
+                //cryptage du mot de passe avant enregistrement en base
+                $password = $inscription->getPassword();
+                $pass_hache = password_hash($password, PASSWORD_DEFAULT);
+                $inscription->setPassword($pass_hache);
 
                 //On présiste l'entité
                 $em->persist($inscription);
