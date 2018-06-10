@@ -178,6 +178,8 @@ class SiteController extends Controller
                 //On récupère l'EntityManager
                 $em = $this->getDoctrine()->getManager();
 
+                $inscription->setRoles(array('ROLE_USER'));
+
                 //On présiste l'entité
                 $em->persist($inscription);
 

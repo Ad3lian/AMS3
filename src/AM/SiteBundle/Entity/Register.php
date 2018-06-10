@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Register
  *
- * @ORM\Table(name="users_temp")
+ * @ORM\Table(name="register")
  * @ORM\Entity(repositoryClass="AM\SiteBundle\Repository\RegisterRepository")
  */
 class Register
@@ -24,14 +24,14 @@ class Register
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=35)
+     * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="firstname", type="string", length=35)
+     * @ORM\Column(name="firstname", type="string", length=255)
      */
     private $firstname;
 
@@ -52,7 +52,7 @@ class Register
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="register_date", type="datetime")
+     * @ORM\Column(name="registerDate", type="datetime")
      */
     private $registerDate;
 
@@ -70,14 +70,16 @@ class Register
      */
     private $roles;
 
-    /**
-     * Register constructor.
-     */
     public function __construct()
     {
+        //Par défaut, la date du jour, le role user
         $this->registerDate = new \DateTime();
         $this->salt = '';
-        $this->roles = array('ROLE_USER');
+    }
+
+    public function eraseCredentials()
+    {
+
     }
     /**
      * Get id
@@ -214,7 +216,7 @@ class Register
      *
      * @param string $salt
      *
-     * @return User
+     * @return Register
      */
     public function setSalt($salt)
     {
@@ -238,7 +240,7 @@ class Register
      *
      * @param array $roles
      *
-     * @return User
+     * @return Register
      */
     public function setRoles($roles)
     {

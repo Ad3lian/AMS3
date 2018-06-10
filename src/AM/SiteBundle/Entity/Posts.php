@@ -2,7 +2,6 @@
 
 namespace AM\SiteBundle\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -39,7 +38,7 @@ class Posts
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="creation_date", type="datetime")
+     * @ORM\Column(name="creationDate", type="datetime")
      */
     private $creationDate;
 

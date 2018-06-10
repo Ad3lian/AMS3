@@ -1,6 +1,6 @@
 <?php
 
-namespace AM\SiteBundle\Entity;
+namespace AM\BackofficeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Comments
  *
  * @ORM\Table(name="comments")
- * @ORM\Entity(repositoryClass="AM\SiteBundle\Repository\CommentsRepository")
+ * @ORM\Entity(repositoryClass="AM\BackofficeBundle\Repository\CommentsRepository")
  */
 class Comments
 {

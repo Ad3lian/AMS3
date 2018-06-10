@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Emails
  *
- * @ORM\Table(name="email")
+ * @ORM\Table(name="emails")
  * @ORM\Entity(repositoryClass="AM\SiteBundle\Repository\EmailsRepository")
  */
 class Emails
@@ -15,7 +15,7 @@ class Emails
     /**
      * @var int
      *
-     * @ORM\Column(name="id_messagerie", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
@@ -24,21 +24,21 @@ class Emails
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=65)
+     * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="firstname", type="string", length=35)
+     * @ORM\Column(name="firstname", type="string", length=255)
      */
     private $firstname;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=65)
+     * @ORM\Column(name="email", type="string", length=255)
      */
     private $email;
 
@@ -52,17 +52,11 @@ class Emails
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="email_date", type="datetime")
+     * @ORM\Column(name="emailDate", type="datetime")
      */
     private $emailDate;
 
-    /**
-     * Emails constructor.
-     */
-    public function __construct()
-    {
-        $this->emailDate = new \DateTime();
-    }
+
     /**
      * Get id
      *

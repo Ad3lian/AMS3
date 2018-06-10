@@ -38,7 +38,7 @@ class Posts
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="creation_date", type="datetimetz")
+     * @ORM\Column(name="creationDate", type="datetime")
      */
     private $creationDate;
 
@@ -49,11 +49,6 @@ class Posts
      */
     private $author;
 
-    public function __construct()
-    {
-        $this->creationDate = new \DateTime();
-        $this->author = 'Adrien';
-    }
 
     /**
      * Get id

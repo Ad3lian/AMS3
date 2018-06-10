@@ -1,6 +1,6 @@
 <?php
 
-namespace AM\BackofficeBundle\Repository;
+namespace AM\SiteBundle\Repository;
 
 /**
  * AboutMeRepository

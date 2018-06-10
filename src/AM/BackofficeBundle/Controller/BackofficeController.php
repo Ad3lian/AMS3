@@ -4,7 +4,7 @@ namespace AM\BackofficeBundle\Controller;
 
 use AM\BackofficeBundle\AMBackofficeBundle;
 use AM\BackofficeBundle\Entity\User;
-use AM\BackofficeBundle\Entity\Usertemp;
+use AM\BackofficeBundle\Entity\Register;
 use AM\BackofficeBundle\Entity\Posts;
 use AM\BackofficeBundle\Entity\Email;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;

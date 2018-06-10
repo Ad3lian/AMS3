@@ -5,40 +5,40 @@ namespace AM\BackofficeBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Email
+ * Emails
  *
- * @ORM\Table(name="email")
- * @ORM\Entity(repositoryClass="AM\BackofficeBundle\Repository\EmailRepository")
+ * @ORM\Table(name="emails")
+ * @ORM\Entity(repositoryClass="AM\BackofficeBundle\Repository\EmailsRepository")
  */
-class Email
+class Emails
 {
     /**
      * @var int
      *
-     * @ORM\Column(name="id_messagerie", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id_messagerie;
+    private $id;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=65)
+     * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="firstname", type="string", length=35)
+     * @ORM\Column(name="firstname", type="string", length=255)
      */
     private $firstname;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=65)
+     * @ORM\Column(name="email", type="string", length=255)
      */
     private $email;
 
@@ -52,19 +52,19 @@ class Email
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="email_date", type="datetime")
+     * @ORM\Column(name="emailDate", type="datetime")
      */
     private $emailDate;
 
 
     /**
-     * Get id_messagerie
+     * Get id
      *
      * @return int
      */
-    public function getId_messagerie()
+    public function getId()
     {
-        return $this->id_messagerie;
+        return $this->id;
     }
 
     /**
@@ -72,7 +72,7 @@ class Email
      *
      * @param string $name
      *
-     * @return Email
+     * @return Emails
      */
     public function setName($name)
     {
@@ -96,7 +96,7 @@ class Email
      *
      * @param string $firstname
      *
-     * @return Email
+     * @return Emails
      */
     public function setFirstname($firstname)
     {
@@ -120,7 +120,7 @@ class Email
      *
      * @param string $email
      *
-     * @return Email
+     * @return Emails
      */
     public function setEmail($email)
     {
@@ -144,7 +144,7 @@ class Email
      *
      * @param string $message
      *
-     * @return Email
+     * @return Emails
      */
     public function setMessage($message)
     {
@@ -168,7 +168,7 @@ class Email
      *
      * @param \DateTime $emailDate
      *
-     * @return Email
+     * @return Emails
      */
     public function setEmailDate($emailDate)
     {

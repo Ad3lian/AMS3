@@ -5,12 +5,12 @@ namespace AM\BackofficeBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Usertemp
+ * User
  *
- * @ORM\Table(name="users_temp")
- * @ORM\Entity(repositoryClass="AM\BackofficeBundle\Repository\UsertempRepository")
+ * @ORM\Table(name="user")
+ * @ORM\Entity(repositoryClass="AM\BackofficeBundle\Repository\UserRepository")
  */
-class Usertemp
+class User
 {
     /**
      * @var int
@@ -24,21 +24,28 @@ class Usertemp
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=35)
+     * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="firstname", type="string", length=35)
+     * @ORM\Column(name="firstname", type="string", length=255)
      */
     private $firstname;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255)
+     * @ORM\Column(name="username", type="string", length=255, unique=true)
+     */
+    private $username;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255, unique=true)
      */
     private $email;
 
@@ -52,16 +59,23 @@ class Usertemp
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="register_date", type="datetimetz")
+     * @ORM\Column(name="registerDate", type="datetime")
      */
     private $registerDate;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="grade", type="integer")
+     * @ORM\Column(name="salt", type="string", length=255)
      */
-    private $grade;
+    private $salt;
+
+    /**
+     * @var array
+     *
+     * @ORM\Column(name="roles", type="array")
+     */
+    private $roles;
 
 
     /**
@@ -79,7 +93,7 @@ class Usertemp
      *
      * @param string $name
      *
-     * @return Usertemp
+     * @return User
      */
     public function setName($name)
     {
@@ -103,7 +117,7 @@ class Usertemp
      *
      * @param string $firstname
      *
-     * @return Usertemp
+     * @return User
      */
     public function setFirstname($firstname)
     {
@@ -123,11 +137,35 @@ class Usertemp
     }
 
     /**
+     * Set username
+     *
+     * @param string $username
+     *
+     * @return User
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    /**
+     * Get username
+     *
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
      * Set email
      *
      * @param string $email
      *
-     * @return Usertemp
+     * @return User
      */
     public function setEmail($email)
     {
@@ -151,7 +189,7 @@ class Usertemp
      *
      * @param string $password
      *
-     * @return Usertemp
+     * @return User
      */
     public function setPassword($password)
     {
@@ -175,7 +213,7 @@ class Usertemp
      *
      * @param \DateTime $registerDate
      *
-     * @return Usertemp
+     * @return User
      */
     public function setRegisterDate($registerDate)
     {
@@ -195,27 +233,51 @@ class Usertemp
     }
 
     /**
-     * Set grade
+     * Set salt
      *
-     * @param integer $grade
+     * @param string $salt
      *
-     * @return Usertemp
+     * @return User
      */
-    public function setGrade($grade)
+    public function setSalt($salt)
     {
-        $this->grade = $grade;
+        $this->salt = $salt;
 
         return $this;
     }
 
     /**
-     * Get grade
+     * Get salt
      *
-     * @return int
+     * @return string
      */
-    public function getGrade()
+    public function getSalt()
     {
-        return $this->grade;
+        return $this->salt;
+    }
+
+    /**
+     * Set roles
+     *
+     * @param array $roles
+     *
+     * @return User
+     */
+    public function setRoles($roles)
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * Get roles
+     *
+     * @return array
+     */
+    public function getRoles()
+    {
+        return $this->roles;
     }
 }
 
