@@ -4,20 +4,42 @@
 
 {% block body %}
 
+
     {# S'il y a une erreur, on l'affiche dans un joli cadre #}
     {% if error %}
         <div class="alert alert-danger">{{ error.message }}</div>
     {% endif %}
 
-    {# Le formulaire, avec URL de soumission vers la route « login_check » comme on l'a vu #}
-    <form action="{{ path('login_check') }}" method="post">
-        <label for="username">Login :</label>
-        <input type="text" id="username" name="_username" value="{{ last_username }}" /><br />
+    <div class="modal-content" style="margin-top:10%;margin-left:30%;width: 40%;">
+        <div class="modal-header">
+            <h4 class="modal-title">CONNEXION</h4>
+        </div>
 
-        <label for="password">Mot de passe :</label>
-        <input type="password" id="password" name="_password" />
-        <br />
-        <input type="submit" value="Connexion" />
-    </form>
+        <div class="modal-body">
+            <form id="form_connexion" action="{{ path('login_check') }}" method="POST">
+                <h4>Vous avez un compte administrateur ? C'est par ici :</h4>
+                <div class="form-group">
+                    <label for="username">Adresse mail : </label>
+                    <input type="text" id="username" name="_username" required maxlength="255"
+                           class="form-control" value="{{ last_username }}">
+                </div>
+                <div class="form-group">
+                    <label for="password">Mot de passe : </label>
+                    <input type="password" id="password" name="_password" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-log-in"> Connexion</span>
+                    </button>
+                </div>
+            </form>
+            <div style="margin-top: 10px;">
+                <a href="{{ path('am_site_inscription') }}">Pas encore inscrit ? C'est par là !</a>
+            </div><br>
+
+        </div>
+        <div class="modal-footer"></div>
+
+    </div>
 
 {% endblock %}

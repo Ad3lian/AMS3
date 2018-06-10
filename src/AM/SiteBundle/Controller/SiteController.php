@@ -7,13 +7,10 @@ use AM\SiteBundle\Entity\Posts;
 use AM\SiteBundle\Entity\Comments;
 use AM\SiteBundle\Entity\Register;
 use AM\SiteBundle\Entity\Emails;
-use AM\SiteBundle\Entity\Users;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -153,47 +150,6 @@ class SiteController extends Controller
             'noPano' => $noPano,
         ));
     }
-    public function connexionAction(Request $request)
-    {
-        //si la requête est en POST
-//        if($request->isMethod('POST')) {
-//
-//            $email = $request->get('email');
-//            $password = $request->get('password');
-//
-//            //cryptage du mot de passe avant enregistrement en base
-//            $password = $request->get('password');
-//            $pass_hache = password_hash($password, PASSWORD_DEFAULT);
-//
-//            $cnx = $this
-//                ->getDoctrine()
-//                ->getManager()
-//                ->getRepository('AMSiteBundle:Users')
-//                ->findBy(
-//                    array('email' => $email),
-//                    null,
-//                    null,
-//                    null
-//                )
-//            ;
-//
-//            var_dump($cnx);die;
-//
-//            if ($cnx == null)
-//            {
-//                return $this->redirectToRoute('am_site_index');
-//            }
-//            else
-//            {
-//                $request->getSession()->getFlashBag()->add('notice', 'Connexion granted.');
-//
-//                return $this->redirectToRoute('am_backoffice_index');
-//            }
-//
-//        }
-
-        return $this->redirectToRoute('am_site_contact');
-    }
     public function inscriptionAction(Request $request)
     {
         //Création de l'objet
@@ -221,11 +177,6 @@ class SiteController extends Controller
             if($form->isValid()) {
                 //On récupère l'EntityManager
                 $em = $this->getDoctrine()->getManager();
-
-                //cryptage du mot de passe avant enregistrement en base
-                $password = $inscription->getPassword();
-                $pass_hache = password_hash($password, PASSWORD_DEFAULT);
-                $inscription->setPassword($pass_hache);
 
                 //On présiste l'entité
                 $em->persist($inscription);

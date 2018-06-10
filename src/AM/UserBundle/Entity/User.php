@@ -14,8 +14,6 @@ use Symfony\Component\Security\Core\User\UserInterface;
 class User implements UserInterface
 {
     /**
-     * @var int
-     *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -23,33 +21,39 @@ class User implements UserInterface
     private $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="username", type="string", length=255, unique=true)
+     * @ORM\Column(name="name", type="string", length=255)
      */
-    private $username;
+    private $name;
 
     /**
-     * @var string
-     *
+     * @ORM\Column(name="firstname", type="string", length=255)
+     */
+    private $firstname;
+
+    /**
      * @ORM\Column(name="password", type="string", length=255)
      */
     private $password;
 
     /**
-     * @var string
-     *
+     * @ORM\Column(name="email", type="string", length=255, unique=true)
+     */
+    private $username;
+
+    /**
+     * @ORM\Column(name="register_date", type="datetime")
+     */
+    private $registerDate;
+
+    /**
      * @ORM\Column(name="salt", type="string", length=255)
      */
     private $salt;
 
     /**
-     * @var array
-     *
      * @ORM\Column(name="roles", type="array")
      */
     private $roles;
-
 
     public function eraseCredentials()
     {
@@ -67,27 +71,49 @@ class User implements UserInterface
     }
 
     /**
-     * Set username
+     * Get name
      *
-     * @param string $username
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
      *
      * @return User
      */
-    public function setUsername($username)
+    public function setName($name)
     {
-        $this->username = $username;
+        $this->name = $name;
+    }
+
+    /**
+     * Set firstname
+     *
+     * @param string $firstname
+     *
+     * @return User
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
 
         return $this;
     }
 
     /**
-     * Get username
+     * Get firstname
      *
      * @return string
      */
-    public function getUsername()
+    public function getFirstname()
     {
-        return $this->username;
+        return $this->firstname;
     }
 
     /**
@@ -112,6 +138,50 @@ class User implements UserInterface
     public function getPassword()
     {
         return $this->password;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $username
+     *
+     * @return User
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * Get register_date
+     *
+     * @return \DateTime
+     */
+    public function getRegisterDate()
+    {
+        return $this->registerDate;
+    }
+
+    /**
+     * Set register_date
+     *
+     * @param \DateTime $registerDate
+     */
+    public function setRegisterDate($registerDate)
+    {
+        $this->registerDate = $registerDate;
     }
 
     /**

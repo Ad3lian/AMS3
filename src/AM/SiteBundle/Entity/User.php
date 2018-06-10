@@ -1,6 +1,6 @@
 <?php
 
-namespace AM\BackofficeBundle\Entity;
+namespace AM\SiteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -9,7 +9,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * User
  *
  * @ORM\Table(name="user")
- * @ORM\Entity(repositoryClass="AM\BackofficeBundle\Repository\UserRepository")
+ * @ORM\Entity(repositoryClass="AM\SiteBundle\Repository\UserRepository")
  */
 class User implements UserInterface
 {

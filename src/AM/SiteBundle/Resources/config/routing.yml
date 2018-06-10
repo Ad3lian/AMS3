@@ -23,8 +23,8 @@ am_site_contact:
     defaults: { _controller: AMSiteBundle:Site:contact }
 
 am_site_connexion:
-    path:    /connexion
-    defaults: { _controller: AMSiteBundle:Site:connexion }
+    path:    /login
+    defaults: { _controller: AMUserBundle:Security:login }
 
 am_site_inscription:
     path:    /inscription

@@ -3,7 +3,7 @@
 namespace AM\BackofficeBundle\Controller;
 
 use AM\BackofficeBundle\AMBackofficeBundle;
-use AM\BackofficeBundle\Entity\Users;
+use AM\BackofficeBundle\Entity\User;
 use AM\BackofficeBundle\Entity\Usertemp;
 use AM\BackofficeBundle\Entity\Posts;
 use AM\BackofficeBundle\Entity\Email;
@@ -29,7 +29,7 @@ class BackofficeController extends Controller
         $users = $this
             ->getDoctrine()
             ->getManager()
-            ->getRepository('AMBackofficeBundle:Users')
+            ->getRepository('AMBackofficeBundle:User')
             ->findBy(
                 array('id' => $id),
                 null,
@@ -50,7 +50,7 @@ class BackofficeController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
-        $advert = $em->getRepository('AMBackofficeBundle:Users')->find($id);
+        $advert = $em->getRepository('AMBackofficeBundle:User')->find($id);
 
         $advert->setName($nom);
         $advert->setFirstname($prenom);
@@ -61,7 +61,7 @@ class BackofficeController extends Controller
         $users = $this
             ->getDoctrine()
             ->getManager()
-            ->getRepository('AMBackofficeBundle:Users')
+            ->getRepository('AMBackofficeBundle:User')
             ->findBy(
                 array('id' => $id),
                 null,
@@ -211,7 +211,7 @@ class BackofficeController extends Controller
         $userstemp = $this
             ->getDoctrine()
             ->getManager()
-            ->getRepository('AMBackofficeBundle:Usertemp')
+            ->getRepository('AMBackofficeBundle:Register')
             ->findBy(
                 array(),
                 array('registerDate' => 'desc'),
@@ -228,7 +228,7 @@ class BackofficeController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $advert = $em->getRepository('AMBackofficeBundle:Usertemp')->find($id);
+        $advert = $em->getRepository('AMBackofficeBundle:Register')->find($id);
 
         $em->remove($advert);
         $em->flush();
@@ -236,7 +236,7 @@ class BackofficeController extends Controller
         $userstemp = $this
             ->getDoctrine()
             ->getManager()
-            ->getRepository('AMBackofficeBundle:Usertemp')
+            ->getRepository('AMBackofficeBundle:Register')
             ->findBy(
                 array(),
                 array('registerDate' => 'desc'),
@@ -254,7 +254,7 @@ class BackofficeController extends Controller
         //Connexion à la base temporaire
         $em = $this->getDoctrine()->getManager();
 
-        $advert = $em->getRepository('AMBackofficeBundle:Usertemp')->find($id);
+        $advert = $em->getRepository('AMBackofficeBundle:Register')->find($id);
 
         //récupération des données du compte temporaire
         $name = $advert->getName();
@@ -265,9 +265,9 @@ class BackofficeController extends Controller
 
 
         //création du compte permanent
-        $advert1 = new Users();
+        $advert1 = new User();
         $advert1->setName($name);
-        $advert1->setFirstname($firstname);
+        $advert1->setUsername($firstname);
         $advert1->setEmail($email);
         $advert1->setPassword($password);
         $advert1->setRegisterDate($registerdate);

@@ -38,7 +38,7 @@ class Register
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255)
+     * @ORM\Column(name="email", type="string", length=255, unique=true)
      */
     private $email;
 
@@ -57,11 +57,18 @@ class Register
     private $registerDate;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="grade", type="integer")
+     * @ORM\Column(name="salt", type="string", length=255)
      */
-    private $grade;
+    private $salt;
+
+    /**
+     * @var array
+     *
+     * @ORM\Column(name="roles", type="array")
+     */
+    private $roles;
 
     /**
      * Register constructor.
@@ -69,7 +76,8 @@ class Register
     public function __construct()
     {
         $this->registerDate = new \DateTime();
-        $this->grade = 0;
+        $this->salt = '';
+        $this->roles = array('ROLE_USER');
     }
     /**
      * Get id
@@ -202,27 +210,51 @@ class Register
     }
 
     /**
-     * Set grade
+     * Set salt
      *
-     * @param integer $grade
+     * @param string $salt
      *
-     * @return Register
+     * @return User
      */
-    public function setGrade($grade)
+    public function setSalt($salt)
     {
-        $this->grade = $grade;
+        $this->salt = $salt;
 
         return $this;
     }
 
     /**
-     * Get grade
+     * Get salt
      *
-     * @return int
+     * @return string
      */
-    public function getGrade()
+    public function getSalt()
     {
-        return $this->grade;
+        return $this->salt;
+    }
+
+    /**
+     * Set roles
+     *
+     * @param array $roles
+     *
+     * @return User
+     */
+    public function setRoles($roles)
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * Get roles
+     *
+     * @return array
+     */
+    public function getRoles()
+    {
+        return $this->roles;
     }
 }
 
