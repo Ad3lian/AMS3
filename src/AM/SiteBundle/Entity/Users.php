@@ -52,7 +52,7 @@ class Users
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="registerDate", type="datetime")
+     * @ORM\Column(name="register_date", type="datetime")
      */
     private $registerDate;
 

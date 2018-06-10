@@ -18,10 +18,6 @@ am_site_comment:
     path:    /blog/comment/{id}
     defaults: { _controller: AMSiteBundle:Site:comment }
 
-am_site_cv:
-    path:    /cv
-    defaults: { _controller: AMSiteBundle:Site:cv }
-
 am_site_contact:
     path:    /contact
     defaults: { _controller: AMSiteBundle:Site:contact }

@@ -275,6 +275,8 @@ class BackofficeController extends Controller
         $em->remove($advert);
 
         $em->flush();
+
+        return $this->redirectToRoute('am_backoffice_usertemp');
     }
     public function mailAction()
     {

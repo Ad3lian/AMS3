@@ -155,51 +155,44 @@ class SiteController extends Controller
     }
     public function connexionAction(Request $request)
     {
-        $noPano = false;
-        var_dump($request);die;
-
-
         //si la requête est en POST
-        if($request->isMethod('POST')) {
+//        if($request->isMethod('POST')) {
+//
+//            $email = $request->get('email');
+//            $password = $request->get('password');
+//
+//            //cryptage du mot de passe avant enregistrement en base
+//            $password = $request->get('password');
+//            $pass_hache = password_hash($password, PASSWORD_DEFAULT);
+//
+//            $cnx = $this
+//                ->getDoctrine()
+//                ->getManager()
+//                ->getRepository('AMSiteBundle:Users')
+//                ->findBy(
+//                    array('email' => $email),
+//                    null,
+//                    null,
+//                    null
+//                )
+//            ;
+//
+//            var_dump($cnx);die;
+//
+//            if ($cnx == null)
+//            {
+//                return $this->redirectToRoute('am_site_index');
+//            }
+//            else
+//            {
+//                $request->getSession()->getFlashBag()->add('notice', 'Connexion granted.');
+//
+//                return $this->redirectToRoute('am_backoffice_index');
+//            }
+//
+//        }
 
-            $email = $request->get('email');
-            $password = $request->get('password');
-
-            //cryptage du mot de passe avant enregistrement en base
-            $password = $request->get('password');
-            $pass_hache = password_hash($password, PASSWORD_DEFAULT);
-
-            $cnx = $this
-                ->getDoctrine()
-                ->getManager()
-                ->getRepository('AMSiteBundle:Users')
-                ->findOneBy(
-                    array('email' => $email),
-                    null,
-                    null,
-                    null
-                )
-            ;
-
-            var_dump($cnx);die;
-
-            if ($cnx == null)
-            {
-
-            }
-
-
-
-                $request->getSession()->getFlashBag()->add('notice', 'Connexion granted.');
-
-                return $this->redirectToRoute('am_backoffice_index');
-        }
-
-        return $this->render('AMSiteBundle:Site:contact.html.twig', array(
-            'noPano' => $noPano,
-        ));
-
-
+        return $this->redirectToRoute('am_site_contact');
     }
     public function inscriptionAction(Request $request)
     {

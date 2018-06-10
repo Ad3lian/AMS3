@@ -9,14 +9,14 @@ $(function() {
             data : $('#form_connexion').serialize(),
             dataType: 'html',
             success: function(code_html, statut, data){
-                window.location.replace('index.php?action=connexion&email=' + email + '&password=' + password);
+                // window.location.replace('index.php?action=connexion&email=' + email + '&password=' + password);
             },
-            error : function(resultat, statut, erreur){   
+            error : function(resultat, statut, erreur){
             },
             complete : function(resultat, statut){
             }
         });
-        
+
     });
     
     //Contrôle de la saisie dans contact
