@@ -1,10 +1,9 @@
 # To get started with security, check out the documentation:
 # https://symfony.com/doc/current/security.html
 security:
-    access_control:
-            #- { path: ^/login, roles: IS_AUTHENTIFICATED_ANONYMOUSLY, requires_channel: https }
     encoders:
         Symfony\Component\Security\Core\User\User: plaintext
+        AM\UserBundle\Entity\User: plaintext
 
     role_hierarchy:
          ROLE_ADMIN:       ROLE_USER
@@ -12,12 +11,15 @@ security:
 
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
-        in_memory:
-            memory:
-                users:
-                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
-
+        main:
+            entity:
+                class:    AM\UserBundle\Entity\User
+                property: username
+#        in_memory:
+#            memory:
+#                users:
+#                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
+#                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
@@ -26,12 +28,17 @@ security:
         main:
             pattern:    ^/
             anonymous:  true
+            provider:   main
             form_login:
                 login_path: login
                 check_path: login_check
             logout:
                 path:       logout
                 target:     login
+    access_control:
+                - { path: ^/bo, roles: ROLE_ADMIN }
+
+
             # activate different ways to authenticate
 
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
